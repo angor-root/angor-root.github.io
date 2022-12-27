@@ -3,11 +3,11 @@ title: Caleb Churata
 description: Personal website powered by Jekyll
 baseurl: "" # the subpath of your site, e.g. /blog
 # url: "localhost:3000" # the base hostname & protocol for your site e.g. https://example.com/
-updated: 2021
+updated: 2022
 
 # Landing Page
 username: Long Do
-typing_text: Cechatronic Engineering Student UTEC
+typing_text: Mechatronic Engineering Student UTEC
 email: caleb.churata@utec.edu.pe
 github_username: caleisach
 codepen_username: caleisach
