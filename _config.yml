@@ -8,12 +8,12 @@ updated: 2021
 # Landing Page
 username: Long Do
 typing_text: Full Stack Developer
-email: long.do234@gmail.com
-github_username: longpdo
-codepen_username: longpdo
-dev_username:
-linkedin_username: longpdo
-twitter_username:
+email: caleb.churata@utec.edu.pe
+github_username: caleisach
+codepen_username: caleisach
+dev_username: 
+linkedin_username: caleb-isaias-churata-berna-138140224
+twitter_username: CaleIsaCh
 
 # About Me Section
 show_aboutme_card: true
@@ -26,7 +26,7 @@ skills_title: Skills
 # Timeline Section
 show_timeline_card: true
 timeline_title: My Journey
-cv_download_link: https://github.com/longpdo/Awesome-CV/blob/master/examples/cv.pdf
+cv_download_link: # https://github.com/longpdo/Awesome-CV/blob/master/examples/cv.pdf
 
 # Projects Section
 show_projects_card: true
