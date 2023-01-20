@@ -1,19 +1,10 @@
 <div class="landing">
   <div class="landing-logo">
     <h1>
-      <em>C</em>
-      <em class="planet left">A</em>
-      <em>L</em>
-      <em>E</em>
-      <em>&nbsp;</em>
-      <em>i</em>
-      <em>s</em>
-      <em class="planet right">A</em>
-      <em>c</em>
-      <em>h</em>
+      <em>CAleb Churata</em>
     </h1>
   </div>
-<!-- cambiar todo esto por el texto que quieras que aparezca en la pagina principal --> 
+
   <div class="landing-title">
     <h1>
       <span id="txt-rotate" data-period="2000" data-rotate='["{{site.typing_text}}", "scroll down for more."]'>
@@ -49,6 +40,23 @@
             </svg>
           </div>
           <span class="label">GitHub</span>
+        </a>
+      {% endif %}
+
+      {% if site.codepen_username != null %}
+        <a class="social-link" aria-label="My Codepen" target="_blank" rel="noreferrer"
+          href="https://codepen.io/{{site.codepen_username}}"
+        >
+          <svg viewBox="0 0 200 200" class="circle">
+            <circle cx="100" cy="100" r="80" />
+          </svg>
+          <div class="social">
+            <svg class="social-svg" viewBox="0 0 48 48">
+              <use x="12" y="12" width="24" height="24" viewBox="0 0 48 48"
+                xlink:href="{{ "/assets/img/brands.svg#codepen" | prepend: site.baseurl }}"></use>
+            </svg>
+          </div>
+          <span class="label">CodePen</span>
         </a>
       {% endif %}
 
@@ -104,7 +112,7 @@
       {% endif %}
       {% if site.instagram_username != null %}
         <a class="social-link instagram" aria-label="My Instagram" target="_blank" rel="noreferrer"
-          href="https://instagram.com/{{site.instagram_username}}"
+          href="https://www.instagram.com/{{site.twitter_username}}"
         >
           <svg viewBox="0 0 200 200" class="circle">
             <circle cx="100" cy="100" r="80" />
@@ -117,7 +125,7 @@
           </div>
           <span class="label">Instagram</span>
         </a>
-      {% endif %}     
+      {% endif %}      
     </div>
   </div>
 </div>
