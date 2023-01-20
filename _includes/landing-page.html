@@ -1,18 +1,44 @@
 <div class="landing">
   <div class="landing-logo">
     <h1>
+      <em>C</em>
+      <em>A</em>
       <em>L</em>
-      <em class="planet left">O</em>
-      <em>N</em>
-      <em>G</em>
+      <em>E</em>
+      <em>B</em>
       <em>&nbsp;</em>
-      <em>D</em>
-      <em class="planet right">O</em>
+      <em>C</em>
+      <em>H</em>
+      <em>U</em>
+      <em>R</em>
+      <em>A</em>
+      <em>T</em>
+      <em>A</em>
     </h1>
   </div>
+</div>
+
+<style>
+.landing-logo {
+  font-size: 4em;
+  font-weight: bold;
+  text-align: center;
+  animation: animate-logo 2s ease-in-out infinite;
+}
+
+@keyframes animate-logo {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+</style>
 
   <div class="landing-title">
     <h1>
+      <span id="txt-rotate" data-period="2000" data-rotate='["{{site.typing_text}}", "Caleb Isaias Churata Berna"]'>
       <span id="txt-rotate" data-period="2000" data-rotate='["{{site.typing_text}}", "scroll down for more."]'>
       </span>
     </h1>
