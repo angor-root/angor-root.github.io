@@ -1,6 +1,6 @@
 # Site settings
 title: Caleb Churata
-description: Personal website powered by Jekyll
+description: Caleb Churata's personal website - Mechatronics Engineer student at UTEC, interested in robotics and automation, sharing my code on Github, and more.
 baseurl: #"/blog" # the subpath of your site, e.g. /blog
 # url: "localhost:3000" # the base hostname & protocol for your site e.g. https://example.com/
 updated: 2022
