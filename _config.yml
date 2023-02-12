@@ -41,7 +41,7 @@ show_contact_card: true
 contact_title: Get In Touch
 
 # Github-Metadata
-repository: longpdo/personal-website
+repository: angor-root/angor-root.github.io
 projects:
   # pushed or stars
   sort_by: stars
