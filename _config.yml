@@ -3,7 +3,7 @@ title: Caleb Churata
 description: Caleb Churata's personal website - Mechatronics Engineer student at UTEC, interested in robotics and automation, sharing my code on Github, and more.
 baseurl: #"/blog" # the subpath of your site, e.g. /blog
 # url: "localhost:3000" # the base hostname & protocol for your site e.g. https://example.com/
-updated: 2022
+updated: 2023
 
 # Landing Page
 username: caleisach
@@ -31,7 +31,7 @@ cv_download_link: # https://github.com/longpdo/Awesome-CV/blob/master/examples/c
 
 # Projects Section
 show_projects_card: true
-show_projects: false
+show_projects: true
 projects_title: Things I Have Built
 show_os_projects: true
 os_projects_title: Things I Contributed To Open Source

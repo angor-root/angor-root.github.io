@@ -6,3 +6,5 @@
 
 - name: Bash
   weight: 3
+- name: LaTeX
+  weight: 3

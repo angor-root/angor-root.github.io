@@ -1,2 +1,6 @@
 - name: Python
   weight: 4
+- name: C++
+  weight: 3
+- name: Matlab
+  weight: 3
