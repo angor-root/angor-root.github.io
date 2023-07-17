@@ -12,7 +12,7 @@
 let allMusic = [
   {
     name: "Huj Llaqtallan - Failures ",
-    artist: "calee",
+    artist: "angorROOT",
     img: "music-1",
     src: "huj_llawtallan__Never_published_failures"
   },
