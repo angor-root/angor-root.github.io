@@ -11,7 +11,7 @@
 
 let allMusic = [
   {
-    name: "Huj Llaqtallan - Failures ",
+    name: "Huq Llaqtallan - Failures ",
     artist: "angorROOT",
     img: "music-1",
     src: "music-1"
