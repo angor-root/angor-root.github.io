@@ -11,8 +11,8 @@
 
 let allMusic = [
   {
-    name: "El Viejo Violin",
-    artist: "nObody",
+    name: "Huj Llawtallan - Never Published Failures",
+    artist: "calee",
     img: "music-1",
     src: "huj_llawtallan__Never_published_failures"
   },
