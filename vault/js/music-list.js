@@ -14,8 +14,8 @@ let allMusic = [
     name: "Huj Llaqtallan - Failures ",
     artist: "angorROOT",
     img: "music-1",
-    src: "huj_llawtallan__Never_published_failures"
-  },
+    src: "music-1"
+  }
 /*  {
     name: "Ikson Anywhere – Ikson",
     artist: "Audio Library",
