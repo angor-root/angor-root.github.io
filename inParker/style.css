@@ -115,7 +115,7 @@ section img#mountains_front
 {
     position: absolute;
     right: -350px;
-    color: #fff;
+    color: #3d2941;
     white-space: nowrap;
     font-size: 7.5vw;
     z-index: 9;
@@ -127,10 +127,10 @@ section img#mountains_front
     display: inline-block;
     padding: 8px 30px;
     border-radius: 40px;
-    background: #fff;
-    color: #2b1055;
-    font-size: 1.5em;
-    z-index: 9;
+    background: #272844;
+    color: #ffffff;
+    font-size: 2em;
+    z-index: 100;
     transform: translateY(100px);
 }
 
