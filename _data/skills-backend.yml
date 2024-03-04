@@ -4,3 +4,5 @@
   weight: 3
 - name: Matlab
   weight: 3
+- name: R
+  weight: 4
