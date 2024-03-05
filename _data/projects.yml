@@ -5,7 +5,7 @@
 #     - tag: Tech
 - name: inParker
   descr: "Revolutionary software that detects available parking spaces in the district using security cameras. Just open the app, reserve your space, pay for it and follow the instructions."
-  demo: https://angor-root.github.io/inParker/
+  demo: "https://angor-root.github.io/inParker/"
   tags:
     - tag: Tech
     - tag: Smart City
@@ -15,7 +15,7 @@
 
 - name: Memory Player
   descr: "A personal music player for practicing my coding skills. It's a simple music player that plays music created by me."
-  demo: https://angor-root.github.io/vault/
+  demo: "https://angor-root.github.io/vault/"
   tags:
     - tag: Tech
     - tag: Music
