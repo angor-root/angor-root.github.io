@@ -17,7 +17,7 @@ let allMusic = [
     src: "music-1"
   },
   {
-    name: "Thanks for the Hostpot",
+    name: "Thanks for the Hotspot - Interconneted",
     artist: "angorROOT X Dido",
     img: "music-2",
     src: "music-2"
