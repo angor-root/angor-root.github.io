@@ -8,20 +8,29 @@
     <link rel="shortcut icon" href="images/icono.png" type="image/x-icon">
 </head>
 <body>
-    <div id="popup" style="display: none; position: fixed; width: 100%; height: 100%; top: 0; left: 0; right: 0; bottom: 0; background-color: rgba(0,0,0,0.5); z-index: 9999; cursor: pointer;">
-        <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background-color: white; padding: 20px; border-radius: 10px;">
-            <h1>Este proyecto fue cancelado</h1>
-            <button onclick="document.getElementById('popup').style.display='none'">Cerrar</button>
+    <div id="popup" style="display: none; position: fixed; width: 100%; height: 100%; top: 0; left: 0; right: 0; bottom: 0; background-color: rgba(0,0,0,0.5); z-index: 9999; cursor: pointer;" onclick="if(event.target == this) this.style.display='none'">
+        <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background-color: rgb(124,164,164); padding: 20px; border-radius: 10px;">
+            <span style="position: absolute; top: 10px; right: 10px; cursor: pointer;" onclick="document.getElementById('popup').style.display='none'">
+                <svg style="color: aliceblue;" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </span>
+            <h1 style="color: rgb(65,47,70); margin-top: 12px;">Project cancelled!</h1>            
+            <p style="color: white;">This project has been cancelled. </p>
+            <a href="#explanation" style="color: blanchedalmond;" onclick="popup.style.display='none'">learn why</a>
         </div>
     </div>
     <header>
-    <a href="#" class="logo"><img src="images/logo.png" alt="logo"></a>
-    
+    <a href="#explanation" class="logo"><img src="images/logo.png" alt="logo" style="width: 50px; height: 50px;"></a>    
     <ul>
         <li><a href="#sec" class="active">Home</a></li>
         <li><a href="#sec">About</a></li>
-        <li><a href="#">Team</a></li>
-        <li><a href="#">Contact</a></li>
+        <li><a href="#explanation">Team</a></li>
+        <li><a href="#explanation">Contact</a></li><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+  <path strokeLinecap="round" strokeLinejoin="round" d="m9.75 9.75 4.5 4.5m0-4.5-4.5 4.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+</svg>
+
     </ul>
     </header>
     <section>
@@ -29,7 +38,7 @@
         <img src="images/carro_solo.png" id="moon" alt="moon">
         <img src="images/fondo_suelo.png" id="mountains_behind" alt="mountains_behind">
         <h2 id="text">./ _aparca en el futuro</h2>
-        <a href="#sec" id="btn">get inParker</a>
+        <a href="#explanation" id="btn">get inParker</a>
         <img src="images/fondos_cosas.png" id="mountains_front" alt="mountains_front">
     </section>
     <div class="sec" id="sec">
@@ -40,10 +49,14 @@
         inParker te ofrece una experiencia de aparcamiento única, cómoda y segura. Al usar inParker, mejoras tu calidad de vida y la de Barranco. ¿A qué esperas? Descarga inParker y aparca en el futuro. <br><br>
         </p>
         <p class="footer__copy">&copy; Designed & Developed by
-            <a class="highlight-link" href="https://angor-root.github.io/" target="_blank" rel="noreferrer">
+            <a class="highlight-link" href="https://angor-root.github.io/" target="_blank" rel="noreferrer" style="color: aquamarine;">
               angot-root
             </a>
           </p>
+    </div>
+    <div id="explanation" style="padding: 20px;">
+        <h2 style="color: rgb(65,47,70);">Why was the project cancelled?</h2>
+        <p style="color: white;">Aquí puedes escribir la explicación de por qué se canceló el proyecto.</p>
     </div>
     <script src="script.js"></script>
         <script>
