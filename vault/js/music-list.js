@@ -15,6 +15,12 @@ let allMusic = [
     artist: "angorROOT",
     img: "music-1",
     src: "music-1"
+  },
+  {
+    name: "Thanks for the Hostpot",
+    artist: "angorROOT X Dido",
+    img: "music-2",
+    src: "music-2"
   }
 /*  {
     name: "Ikson Anywhere – Ikson",
