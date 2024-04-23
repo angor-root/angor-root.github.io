@@ -13,3 +13,12 @@
     - tag: Matlab
     - tag: MATLAB for linear algebra
   timeline-side: left
+- title: Simulink Onramp 
+  title-url: https://matlabacademy.mathworks.com/progress/share/certificate.html?id=88515477-8b5c-4ed0-8456-6b4b850fe579&
+  date: April 2024
+  subtitle: MathWorks
+  tags:
+    - tag: Simulink
+    - tag: MATLAB for control systems
+    - tag: Dynamics and control
+  timeline-side: right

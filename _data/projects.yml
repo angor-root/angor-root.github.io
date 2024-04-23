@@ -3,6 +3,14 @@
 #   demo: https://example.com
 #   tags:
 #     - tag: Tech
+- name: ÉRGON Society - Project
+  descr: "The ÉRGON Society is a community that aims to provide opportunities for ministerial service. It consists of four areas, two public and two support areas. ÉRGON Society is more than just a community, it is a way for you to use your best skills. Serve God and do it well."
+  demo: "https://ergon-society.github.io/"
+  tags:
+    - tag: Tech
+    - tag: Community
+    - tag: Ministry
+
 - name: inParker
   descr: "Revolutionary software that detects available parking spaces in the district using security cameras. Just open the app, reserve your space, pay for it and follow the instructions."
   demo: "https://angor-root.github.io/inParker/"
@@ -20,3 +28,4 @@
     - tag: Tech
     - tag: Music
     - tag: Personal Project
+
