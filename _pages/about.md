@@ -9,7 +9,7 @@ profile:
   image: prof_pic.jpg
   image_circular: false # crops the image to make it circular
   more_info: >
-    <p>Lima, Perú</p>
+    <p>Lima, Peru</p>
     <p>Currently in Zürich, Switzerland</p>
 
 selected_papers: false # includes a list of papers marked as "selected={true}"
@@ -26,7 +26,7 @@ latest_posts:
   limit: 3
 ---
 
-I'm a Mechatronics Engineering student at [UTEC](https://www.utec.edu.pe/) (Lima, Perú), currently a **Robotics Student Fellow** at the [Robotic Systems Lab](https://rsl.ethz.ch/), ETH Zürich, doing legged robotics research with the RSL team.
+I'm a Mechatronics Engineering student at [UTEC](https://www.utec.edu.pe/) (Lima, Peru), currently a **Robotics Student Fellow** at the [Robotic Systems Lab](https://rsl.ethz.ch/), ETH Zürich, doing legged robotics research with the RSL team.
 
 My work sits at the intersection of **legged robotics, sim-to-real reinforcement learning, and low-cost hardware**. Before ETH, I led [FreeWheels](/projects/), an intuitive-control wheelchair for athletes that won 2nd place at IROS 2025 (China), and I currently lead the **LÁK Biped** project at IEEE Robotics & Automation Society UTEC, a bipedal robot inspired by Disney's BDX robot.
 
