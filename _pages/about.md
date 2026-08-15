@@ -28,7 +28,7 @@ latest_posts:
 
 I'm a Mechatronics Engineering student at [UTEC](https://www.utec.edu.pe/) (Lima, Perú), currently a **Robotics Student Fellow** at the [Robotic Systems Lab](https://rsl.ethz.ch/), ETH Zürich, doing legged robotics research with the RSL team.
 
-My work sits at the intersection of **legged robotics, sim-to-real reinforcement learning, and low-cost hardware**. Before ETH, I led [FreeWheels](/projects/), an intuitive-control wheelchair for athletes that won 2nd place at IROS 2025 (China) and the Smart City Challenge (UTEC Ventures), and I currently lead the **LÁK Biped** project at IEEE Robotics & Automation Society UTEC, a bipedal robot inspired by Disney's BDX robot.
+My work sits at the intersection of **legged robotics, sim-to-real reinforcement learning, and low-cost hardware**. Before ETH, I led [FreeWheels](/projects/), an intuitive-control wheelchair for athletes that won 2nd place at IROS 2025 (China), and I currently lead the **LÁK Biped** project at IEEE Robotics & Automation Society UTEC, a bipedal robot inspired by Disney's BDX robot.
 
 I care about making legged robotics research more accessible from Latin America — building capable robots on modest budgets, and closing the sim-to-real gap so research done on cheap hardware still transfers. That's the direction I want my graduate research to take.
 
