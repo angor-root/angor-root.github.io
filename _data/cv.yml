@@ -1,20 +1,14 @@
 cv:
   name: Caleb Churata
-  label: Mechatronics Engineering Student · Robotics Student Fellow
+  headline: Mechatronics Engineering Student · Robotics Student Fellow
   email: caleb.churata@utec.edu.pe
   location: Lima, Perú
-  image: ""
-  summary: Mechatronics Engineering student at UTEC (Perú) and Robotics Student Fellow at the Robotic Systems Lab, ETH Zürich. Focused on legged robotics, sim-to-real reinforcement learning, and low-cost robotics research.
 
   social_networks:
     - network: GitHub
       username: angor-root
     - network: LinkedIn
       username: caleb-churata
-
-  address:
-    city: Lima
-    countryCode: PE
 
   sections:
     Education:
@@ -63,15 +57,13 @@ cv:
         summary: One of 50 students worldwide invited to the ETH Robotics Summer School 2026 — an intensive week combining robotics theory with hands-on programming of autonomous, all-terrain quadruped robots, culminating in a search-and-rescue competition.
 
     Awards:
-      - title: 2nd Place, IROS 2025 (Volting Cup)
+      - name: 2nd Place, IROS 2025 (Volting Cup)
         date: 2025-10
-        awarder: IROS 2025
-        summary: Awarded for the FreeWheels project — an intuitive-control wheelchair for athletes — presented at Volting Cup 2025 in China.
+        summary: Awarded by IROS 2025 for the FreeWheels project — an intuitive-control wheelchair for athletes — presented at Volting Cup 2025 in China.
 
-      - title: Smart City Challenge — Winning Team
+      - name: Smart City Challenge — Winning Team
         date: 2025-04
-        awarder: Darat Latam / UTEC Ventures
-        summary: Recognized for the project with the greatest potential impact on smart urban environments.
+        summary: Awarded by Darat Latam / UTEC Ventures, recognizing the project with the greatest potential impact on smart urban environments.
 
     Projects:
       - name: Obedience — Bipedal Robot
