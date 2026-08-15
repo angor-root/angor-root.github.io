@@ -1,0 +1,109 @@
+cv:
+  name: Caleb Churata
+  label: Mechatronics Engineering Student · Robotics Student Fellow
+  email: caleb.churata@utec.edu.pe
+  location: Lima, Perú
+  image: ""
+  summary: Mechatronics Engineering student at UTEC (Perú) and Robotics Student Fellow at the Robotic Systems Lab, ETH Zürich. Focused on legged robotics, sim-to-real reinforcement learning, and low-cost robotics research.
+
+  social_networks:
+    - network: GitHub
+      username: angor-root
+    - network: LinkedIn
+      username: caleb-churata
+
+  address:
+    city: Lima
+    countryCode: PE
+
+  sections:
+    Education:
+      - institution: UTEC - Universidad de Ingeniería y Tecnología
+        location: Lima, Perú
+        url: https://www.utec.edu.pe/
+        area: Mechatronics Engineering
+        studyType: Bachelor's
+        start_date: 2022-08
+        end_date: present
+
+      - institution: ETH Zürich
+        location: Zürich, Suiza
+        url: https://ethz.ch/
+        area: Robotics
+        studyType: Robotics Student Fellowship Program (RobotX)
+        start_date: 2026-07
+        end_date: 2026-08
+
+    Experience:
+      - company: Robotic Systems Lab, ETH Zürich
+        position: Robotics Student Fellow
+        location: Zürich, Suiza
+        start_date: 2026-07
+        end_date: present
+        summary: Robotics Student Fellow in the ETH Robotics Student Fellowship (RSF) program — legged robotics research with the RSL team.
+
+      - company: IEEE Robotics & Automation Society UTEC
+        position: Director de Proyecto
+        location: Lima, Perú
+        start_date: 2026-02
+        end_date: present
+        summary: Leading the LÁK Biped project, a bipedal robot inspired by Disney's BDX robot.
+
+      - company: IEEE Robotics & Automation Society UTEC
+        position: Presidente
+        location: Barranco, Perú
+        start_date: 2025-01
+        end_date: 2026-02
+
+      - company: ETH RobotX
+        position: ETH Robotics Summer School 2026 — Participant
+        location: Ginebra, Suiza
+        start_date: 2026-07
+        end_date: 2026-07
+        summary: One of 50 students worldwide invited to the ETH Robotics Summer School 2026 — an intensive week combining robotics theory with hands-on programming of autonomous, all-terrain quadruped robots, culminating in a search-and-rescue competition.
+
+    Awards:
+      - title: 2nd Place, IROS 2025 (Volting Cup)
+        date: 2025-10
+        awarder: IROS 2025
+        summary: Awarded for the FreeWheels project — an intuitive-control wheelchair for athletes — presented at Volting Cup 2025 in China.
+
+      - title: Smart City Challenge — Winning Team
+        date: 2025-04
+        awarder: Darat Latam / UTEC Ventures
+        summary: Recognized for the project with the greatest potential impact on smart urban environments.
+
+    Projects:
+      - name: Obedience — Bipedal Robot
+        summary: Autonomous bipedal robot with capture-point walking control, built on ROS 2, MuJoCo, and Pinocchio.
+        start_date: 2026-01
+
+      - name: FreeWheels
+        summary: Intuitive-control wheelchair for athletes. 2nd place, IROS 2025 China; winner, Smart City Challenge.
+        start_date: 2025-10
+        end_date: 2025-10
+
+      - name: LÁK Biped
+        summary: Bipedal robot inspired by Disney's BDX robot, IEEE RAS UTEC.
+        start_date: 2026-02
+
+    Skills:
+      - name: Robotics & Controls
+        keywords: "ROS 2, MuJoCo, Pinocchio, legged locomotion, capture-point control, sim-to-real reinforcement learning"
+
+      - name: Embedded & Hardware
+        keywords: "PCB design (KiCad), ESP32, micro-ROS, Arduino"
+
+      - name: Programming
+        keywords: "Python, C++"
+
+    Languages:
+      - name: Spanish
+        summary: "Native"
+
+      - name: English
+        summary: "Professional working proficiency"
+
+    Interests:
+      - name: Research
+        keywords: "Legged robotics, sim-to-real transfer, reinforcement learning, low-cost and open robotics platforms"

@@ -1,0 +1,10 @@
+github_users:
+  - angor-root
+
+repo_description_lines_max: 2
+
+github_repos:
+  - angor-root/Obedience-Biped-a-Thinking-Autonomous-System
+  - angor-root/a2_rs_controller
+  - angor-root/malambot
+  - angor-root/guia-micro-ros
