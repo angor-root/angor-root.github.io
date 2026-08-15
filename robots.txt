@@ -1,0 +1,4 @@
+User-agent: *
+Disallow:
+
+Sitemap: https://angor-root.github.io/sitemap.xml
