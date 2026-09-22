@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Caleb Churata, Legged Robotics</title>
+<meta name="description" content="Caleb Churata, Mechatronics Engineering, Robotics Student Fellow at RSL, ETH Zürich. Legged locomotion, sim-to-real RL, real field data.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,200;0,9..144,300;0,9..144,400;1,9..144,400;1,9..144,500&family=Inter:wght@400;500;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/tokens.css">
+<link rel="stylesheet" href="css/layout.css">
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23101112'/%3E%3Ctext x='50' y='68' font-family='Georgia,serif' font-size='58' fill='%23C1571A' text-anchor='middle'%3EC%3C/text%3E%3C/svg%3E">
+
+<script type="importmap">
+{
+  "imports": {
+    "three": "https://unpkg.com/three@0.164.1/build/three.module.js",
+    "three/examples/jsm/controls/OrbitControls.js": "https://unpkg.com/three@0.164.1/examples/jsm/controls/OrbitControls.js",
+    "three/examples/jsm/loaders/STLLoader.js": "https://unpkg.com/three@0.164.1/examples/jsm/loaders/STLLoader.js",
+    "three/examples/jsm/loaders/ColladaLoader.js": "https://unpkg.com/three@0.164.1/examples/jsm/loaders/ColladaLoader.js",
+    "urdf-loader": "https://unpkg.com/urdf-loader@0.13.1/src/URDFLoader.js"
+  }
+}
+</script>
+</head>
+<body>
+
+<!-- ================= NAV ================= -->
+<nav class="nav" id="siteNav">
+  <a href="#hero" class="nav__brand">Caleb Churata</a>
+  <div class="nav__links" id="navLinks">
+    <a href="#lab">Robot Lab</a>
+    <a href="#experience">Experience</a>
+    <a href="#projects">Projects</a>
+    <a href="robotics/">Robotics</a>
+    <a href="#cv">CV</a>
+    <a href="#contact">Contact</a>
+  </div>
+  <button class="nav__burger" id="navBurger" aria-label="Menu" aria-expanded="false" aria-controls="navLinks">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- ================= HERO ================= -->
+<header class="hero" id="hero">
+  <div class="hero__media">
+    <img src="assets/media/caleb.jpeg" alt="Caleb Churata">
+  </div>
+
+  <div class="hero__top">
+    <span>Lima, Peru → Zürich, Switzerland</span>
+    <span>Mechatronics Engineering · RSL Fellow</span>
+  </div>
+
+  <div class="hero__content">
+    <span class="hero__eyebrow">Legged Robotics</span>
+    <h1 class="hero__title">Sim-to-real <em>quadruped &amp; biped</em> locomotion</h1>
+    <p class="hero__sub">Robotics Student Fellow at the Robotic Systems Lab, ETH Zürich. I build controllers and low-cost hardware for legs that walk in the real world, not just in simulation.</p>
+    <div class="hero__cta">
+      <a class="btn solid" href="#lab">View the robot lab</a>
+      <a class="btn on-dark" href="assets/cv/Caleb_Churata_CV.pdf">Download CV</a>
+    </div>
+  </div>
+
+  <div class="hero__scroll">
+    <span class="hero__scroll-line"></span>
+    <span>01. Robot Lab</span>
+  </div>
+</header>
+
+<!-- ================= ROBOT LAB ================= -->
+<section id="lab">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="ghost-num">01</span>
+      <span class="label">01 · Robot Lab</span>
+      <h2 class="h-section">A2 (Unitree), real field data</h2>
+      <p class="body-text">The real URDF of the A2, rendered in 3D and driven by <code>/joint_states</code> trajectories extracted directly from my own test rosbags. This is not a live physics simulation. It is an honest replay of motion that actually happened.</p>
+    </div>
+
+    <div class="lab-grid reveal">
+      <div id="viewer-wrap">
+        <div id="viewer-status">Loading A2 model…</div>
+        <div id="viewer-caption">Real trajectory replay · drag to rotate</div>
+      </div>
+      <div class="lab-side" id="lab-side">
+        <div class="clip-btn active" data-id="crouch">
+          <span class="name">Crouch</span>
+          <span class="desc">Low-posture crouch test</span>
+        </div>
+        <div class="clip-btn" data-id="agile">
+          <span class="name">Agile test</span>
+          <span class="desc">Dynamic locomotion on track</span>
+        </div>
+        <div class="clip-btn" data-id="terrain">
+          <span class="name">Rough terrain</span>
+          <span class="desc">Robustness over planks</span>
+        </div>
+        <div class="lab-controls">
+          <button id="play-btn" aria-label="Play / pause">⏸</button>
+          <input type="range" id="seek" min="0" max="12" step="0.01" value="0" aria-label="Seek trajectory">
+        </div>
+      </div>
+    </div>
+
+    <div class="stats stats--2col stats-on-paper reveal" style="margin-top: var(--m-xl);">
+      <div class="stat"><div class="stat__num">3</div><div class="stat__label">Recorded trajectories, own test rig</div></div>
+      <div class="stat"><div class="stat__num">1:1</div><div class="stat__label">Real joint states, no physics sim</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= EXPERIENCE ================= -->
+<section id="experience" class="dark noise">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="ghost-num">02</span>
+      <span class="label on-dark">02 · Trajectory</span>
+      <h2 class="h-section">Experience</h2>
+      <p class="body-text">Education, research and projects in legged robotics.</p>
+    </div>
+
+    <div class="statement reveal">
+      <div class="statement__num">01</div>
+      <div class="statement__body">
+        <div class="statement__meta">
+          <span class="statement__date">2026-07 to Present</span>
+          <span class="statement__place">Zürich, Switzerland</span>
+        </div>
+        <h3 class="h-sub statement__title">Robotics Student Fellow, Robotic Systems Lab, ETH Zürich</h3>
+        <div class="statement__text body-text">
+          <p>Legged robotics research with the RSL team.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="statement reveal">
+      <div class="statement__num">02</div>
+      <div class="statement__body">
+        <div class="statement__meta">
+          <span class="statement__date">2026-07</span>
+          <span class="statement__place">Geneva, Switzerland</span>
+        </div>
+        <h3 class="h-sub statement__title">ETH Robotics Summer School 2026</h3>
+        <div class="statement__text body-text">
+          <p>One of 50 students worldwide invited to a week combining robotics theory with hands-on programming of autonomous, all-terrain quadruped robots, culminating in a search-and-rescue competition.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="statement reveal">
+      <div class="statement__num">03</div>
+      <div class="statement__body">
+        <div class="statement__meta">
+          <span class="statement__date">2026-02 to Present</span>
+          <span class="statement__place">IEEE Robotics &amp; Automation Society UTEC</span>
+        </div>
+        <h3 class="h-sub statement__title">Director de Proyecto, LÁK Biped</h3>
+        <div class="statement__text body-text">
+          <p>Bipedal robot inspired by Disney's BDX robot.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="statement reveal">
+      <div class="statement__num">04</div>
+      <div class="statement__body">
+        <div class="statement__meta">
+          <span class="statement__date">2025-10</span>
+          <span class="statement__place">China</span>
+        </div>
+        <h3 class="h-sub statement__title">2nd Place, IROS 2025 (Volting Cup)</h3>
+        <div class="statement__text body-text">
+          <p>Awarded for FreeWheels, an intuitive-control wheelchair for athletes.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="statement reveal">
+      <div class="statement__num">05</div>
+      <div class="statement__body">
+        <div class="statement__meta">
+          <span class="statement__date">2025-04</span>
+          <span class="statement__place">Darat Latam / UTEC Ventures</span>
+        </div>
+        <h3 class="h-sub statement__title">Smart City Challenge, Winning Team</h3>
+        <div class="statement__text body-text">
+          <p>Recognized for the project with the greatest potential impact on smart urban environments.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="statement reveal">
+      <div class="statement__num">06</div>
+      <div class="statement__body">
+        <div class="statement__meta">
+          <span class="statement__date">2025-01 to 2026-02</span>
+          <span class="statement__place">Barranco, Peru</span>
+        </div>
+        <h3 class="h-sub statement__title">Presidente, IEEE Robotics &amp; Automation Society UTEC</h3>
+      </div>
+    </div>
+
+    <div class="statement reveal">
+      <div class="statement__num">07</div>
+      <div class="statement__body">
+        <div class="statement__meta">
+          <span class="statement__date">2022-08 to Present</span>
+          <span class="statement__place">Lima, Peru</span>
+        </div>
+        <h3 class="h-sub statement__title">UTEC, Mechatronics Engineering</h3>
+        <div class="statement__text body-text">
+          <p>Bachelor's degree.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PROJECTS ================= -->
+<section id="projects">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="ghost-num">03</span>
+      <span class="label">03 · Work</span>
+      <h2 class="h-section">Projects</h2>
+      <p class="body-text">Software and control for legged robots, from low-cost hardware to applied research.</p>
+    </div>
+
+    <ul class="editorial-list reveal">
+      <li>
+        <span class="num">01</span>
+        <div>
+          <div class="title-row">
+            <span class="title">Obedience, Bipedal Robot</span>
+            <span class="tag">Research</span>
+          </div>
+          <p class="desc">Autonomous bipedal delivery robot. Capture-point walking control from the push-recovery literature, implemented as a fault-tolerant ROS 2 "constellation" of nodes. Python · ROS 2 · MuJoCo · Pinocchio.</p>
+        </div>
+        <a class="more" href="https://github.com/angor-root/Obedience-Biped-a-Thinking-Autonomous-System" target="_blank" rel="noopener">View code →</a>
+      </li>
+      <li>
+        <span class="num">02</span>
+        <div>
+          <div class="title-row">
+            <span class="title">FreeWheels</span>
+            <span class="tag">Research</span>
+          </div>
+          <p class="desc">Intuitive-control wheelchair for athletes. 2nd place, IROS 2025 (Volting Cup), China. Winner, Smart City Challenge.</p>
+        </div>
+        <a class="more" href="#experience">View award →</a>
+      </li>
+      <li>
+        <span class="num">03</span>
+        <div>
+          <div class="title-row">
+            <span class="title">LÁK Biped</span>
+            <span class="tag">Ongoing</span>
+          </div>
+          <p class="desc">Bipedal robot inspired by Disney's BDX robot, developed at IEEE Robotics &amp; Automation Society UTEC. Leading the project as Director de Proyecto.</p>
+        </div>
+        <a class="more" href="#experience">More soon →</a>
+      </li>
+    </ul>
+
+    <div class="split reveal" style="margin-top:var(--m-2xl);">
+      <figure class="split__media">
+        <video controls preload="metadata">
+          <source src="assets/media/a2_demo.mp4" type="video/mp4">
+        </video>
+      </figure>
+      <div class="split__text">
+        <span class="label">Field Test</span>
+        <h3 class="h-sub" style="margin:14px 0 18px;">A2 in the field</h3>
+        <p class="body-text">Raw footage from a test session, the same run this site's joint trajectories come from.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CV ================= -->
+<section id="cv" class="dark noise">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="ghost-num">04</span>
+      <span class="label on-dark">04 · Document</span>
+      <h2 class="h-section">Curriculum Vitae</h2>
+      <p class="body-text">Full record of education, experience and skills.</p>
+    </div>
+    <div class="cv-panel reveal">
+      <div class="cv-text">
+        <h3>Caleb Churata, Mechatronics Engineering</h3>
+        <p>Robotics Student Fellow @ RSL, ETH Zürich. Legged locomotion, sim-to-real RL, low-cost hardware.</p>
+      </div>
+      <div class="row gap-s">
+        <a class="btn on-dark" href="cv/index.html">View full CV</a>
+        <a class="btn solid" href="assets/cv/Caleb_Churata_CV.pdf">Download PDF</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer class="site-footer" id="contact">
+  <div class="wrap">
+    <p class="footer-slogan">Building legs that walk in the <span class="accent-word">real world</span>.</p>
+
+    <div class="footer-grid">
+      <div class="footer-col">
+        <span class="label">Caleb Churata</span>
+        <p>Mechatronics Engineering student and Robotics Student Fellow at RSL, ETH Zürich. Legged locomotion, sim-to-real RL, and open, low-cost robotics platforms.</p>
+      </div>
+      <div class="footer-col">
+        <span class="label">Explore</span>
+        <a href="#lab">Robot Lab</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="robotics/">Robotics resources</a>
+        <a href="#cv">CV</a>
+      </div>
+      <div class="footer-col">
+        <span class="label">Connect</span>
+        <a href="mailto:caleb@leggedrobotics.com">caleb@leggedrobotics.com</a>
+        <a href="https://github.com/angor-root" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://www.linkedin.com/in/caleb-churata" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>Caleb Churata, Lima, Peru</span>
+      <span>© 2026</span>
+    </div>
+  </div>
+</footer>
+
+<script type="module" src="js/robot-viewer.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

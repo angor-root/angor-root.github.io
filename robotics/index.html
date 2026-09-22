@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Robotics Resources, Caleb Churata</title>
+<meta name="description" content="A curated shelf of robotics resources: courses, simulators, papers and open hardware for legged robots, plus a daily audio version of the papers and 30-minute mentoring in Spanish.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,200;0,9..144,300;0,9..144,400;1,9..144,300;1,9..144,400;1,9..144,500&family=Inter:wght@400;500;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="../css/tokens.css">
+<link rel="stylesheet" href="../css/layout.css">
+<link rel="stylesheet" href="../css/robotics.css">
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23101112'/%3E%3Ctext x='50' y='68' font-family='Georgia,serif' font-size='58' fill='%23C1571A' text-anchor='middle'%3EC%3C/text%3E%3C/svg%3E">
+</head>
+<body>
+
+<!-- ================= NAV ================= -->
+<nav class="nav" id="siteNav">
+  <a href="../index.html" class="nav__brand">Caleb Churata</a>
+  <div class="nav__links" id="navLinks">
+    <a href="../index.html#lab">Robot Lab</a>
+    <a href="../index.html#experience">Experience</a>
+    <a href="../index.html#projects">Projects</a>
+    <a href="./">Robotics</a>
+    <a href="../cv/">CV</a>
+  </div>
+  <button class="nav__burger" id="navBurger" aria-label="Menu" aria-expanded="false" aria-controls="navLinks">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- ================= HEAD ================= -->
+<header class="page-head noise">
+  <div class="page-head__inner">
+    <nav class="page-head__crumb" aria-label="Breadcrumb">
+      <a href="../index.html">Index</a><span>/</span><span>Robotics</span>
+    </nav>
+    <span class="page-head__eyebrow">Resources</span>
+    <h1>The shelf I&nbsp;wish I&nbsp;had <em>when I started</em></h1>
+    <p class="page-head__sub">Everything below is something I actually used to get from "I want to build a robot that walks" to writing controllers at a legged robotics lab. Short list, no padding. Courses, simulators, the papers that matter, and open hardware you can afford.</p>
+    <div class="page-head__cta">
+      <a class="btn solid" href="#audio">▶ &nbsp;Audio</a>
+      <a class="btn on-dark" href="#mentoring">30 min conmigo</a>
+    </div>
+  </div>
+</header>
+
+<!-- ================= AUDIO ================= -->
+<section id="audio">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="ghost-num">01</span>
+      <span class="label">01 · Listen</span>
+      <h2 class="h-section">One paper a day, in audio</h2>
+      <p class="body-text">Every paper in this workspace has an audio version: a plain-language walkthrough of the idea behind it, generated with NotebookLM. Open it, pick one, listen on the bus.</p>
+    </div>
+
+    <div class="audio-panel reveal">
+      <div class="audio-panel__side">
+        <div class="audio-panel__mark">
+          <i>▶</i>
+          <span>NotebookLM<br>Robotics workspace</span>
+        </div>
+        <div class="audio-panel__wave" aria-hidden="true">
+          <b style="animation-delay:0s"></b><b style="animation-delay:.12s"></b><b style="animation-delay:.24s"></b>
+          <b style="animation-delay:.36s"></b><b style="animation-delay:.48s"></b><b style="animation-delay:.6s"></b>
+          <b style="animation-delay:.72s"></b><b style="animation-delay:.84s"></b><b style="animation-delay:.96s"></b>
+          <b style="animation-delay:1.08s"></b><b style="animation-delay:1.2s"></b><b style="animation-delay:1.32s"></b>
+          <b style="animation-delay:1.44s"></b><b style="animation-delay:1.56s"></b><b style="animation-delay:1.68s"></b>
+        </div>
+      </div>
+
+      <div class="audio-panel__body">
+        <span class="lang-tag">ES · Nota del autor</span>
+        <blockquote class="audio-note" lang="es">
+          <p>He creado el siguiente NotebookLM, donde en el lado izquierdo puedes encontrar los recursos que se han convertido a formato de audio. Cada paper que está dentro de este espacio de trabajo ha sido llevado a una versión sencilla, para que puedas entender el concepto que hay detrás.</p>
+          <p>La idea es que escuches uno de estos cada día, y que poco a poco vayas entendiendo las cosas nuevas que se están haciendo en la industria de la robótica, en distintos ámbitos. Buena suerte en robotics.</p>
+        </blockquote>
+        <div class="audio-panel__foot">
+          <a class="btn solid" href="https://notebooklm.google.com/notebook/0544f4b0-68aa-4b6f-b82d-c75165af60e7?utm_source=nlmm_share" target="_blank" rel="noopener">▶ &nbsp;Audio, abrir NotebookLM</a>
+          <span class="audio-panel__sig">Free · opens in Google NotebookLM</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= RESOURCES ================= -->
+<section id="resources" class="dark noise">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="ghost-num">02</span>
+      <span class="label on-dark">02 · Library</span>
+      <h2 class="h-section">Where to actually learn this</h2>
+      <p class="body-text">Four shelves, in the order I'd work through them. Each link is free unless marked otherwise.</p>
+    </div>
+
+    <!-- Foundations -->
+    <div class="res-block reveal">
+      <div class="res-block__head">
+        <h3>01. Foundations</h3>
+        <span class="res-block__note">Start here · ~1 semester each</span>
+      </div>
+      <div class="res-list">
+        <a class="res" href="https://modernrobotics.northwestern.edu/" target="_blank" rel="noopener">
+          <span class="res__arrow">↗</span>
+          <span class="res__kind">Book + course</span>
+          <span class="res__title">Modern Robotics</span>
+          <span class="res__by">Kevin Lynch &amp; Frank Park · Northwestern</span>
+          <span class="res__why">The cleanest introduction to screw theory, kinematics and dynamics. Free PDF, free lecture videos, and the notation the rest of the field uses.</span>
+        </a>
+        <a class="res" href="https://underactuated.mit.edu/" target="_blank" rel="noopener">
+          <span class="res__arrow">↗</span>
+          <span class="res__kind">Course</span>
+          <span class="res__title">Underactuated Robotics</span>
+          <span class="res__by">Russ Tedrake · MIT 6.832</span>
+          <span class="res__why">Why a walking robot is not a robot arm. Legged locomotion, trajectory optimization and LQR, taught from first principles with runnable notebooks.</span>
+        </a>
+        <a class="res" href="https://lavalle.pl/planning/" target="_blank" rel="noopener">
+          <span class="res__arrow">↗</span>
+          <span class="res__kind">Book</span>
+          <span class="res__title">Planning Algorithms</span>
+          <span class="res__by">Steven M. LaValle · free online</span>
+          <span class="res__why">The reference for configuration spaces, sampling-based planning and motion under differential constraints. Read chapters 4 to 6 and come back for the rest.</span>
+        </a>
+        <a class="res" href="https://spinningup.openai.com/" target="_blank" rel="noopener">
+          <span class="res__arrow">↗</span>
+          <span class="res__kind">Course</span>
+          <span class="res__title">Spinning Up in Deep RL</span>
+          <span class="res__by">OpenAI</span>
+          <span class="res__why">The fastest honest path from "what is a policy gradient" to a working PPO implementation, which is the algorithm behind most legged RL controllers today.</span>
+        </a>
+        <a class="res" href="https://rail.eecs.berkeley.edu/deeprlcourse/" target="_blank" rel="noopener">
+          <span class="res__arrow">↗</span>
+          <span class="res__kind">Course</span>
+          <span class="res__title">Deep Reinforcement Learning, CS 285</span>
+          <span class="res__by">Sergey Levine · UC Berkeley</span>
+          <span class="res__why">Go here after Spinning Up, when you need model-based RL, offline RL and imitation learning to be more than words.</span>
+        </a>
+        <a class="res" href="https://rsl.ethz.ch/education-students/lectures.html" target="_blank" rel="noopener">
+          <span class="res__arrow">↗</span>
+          <span class="res__kind">Lectures</span>
+          <span class="res__title">Robot Dynamics &amp; Legged Robots</span>
+          <span class="res__by">Robotic Systems Lab · ETH Zürich</span>
+          <span class="res__why">Floating-base dynamics, contact models and whole-body control, taught by the group that built ANYmal. Slides and exercises are public.</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Simulators -->
+    <div class="res-block reveal">
+      <div class="res-block__head">
+        <h3>02. Simulators &amp; code</h3>
+        <span class="res-block__note">Build something this week</span>
+      </div>
+      <div class="res-list">
+        <a class="res" href="https://mujoco.org/" target="_blank" rel="noopener">
+          <span class="res__arrow">↗</span>
+          <span class="res__kind">Simulator</span>
+          <span class="res__title">MuJoCo</span>
+          <span class="res__by">Google DeepMind · open source</span>
+          <span class="res__why">Fast, accurate contact dynamics with a readable XML model format. MJX runs thousands of environments on a GPU for RL. Best first simulator.</span>
+        </a>
+        <a class="res" href="https://isaac-sim.github.io/IsaacLab/" target="_blank" rel="noopener">
+          <span class="res__arrow">↗</span>
+          <span class="res__kind">Simulator</span>
+          <span class="res__title">Isaac Lab</span>
+          <span class="res__by">NVIDIA</span>
+          <span class="res__why">Where most published legged RL policies are trained now: massively parallel envs, domain randomization and sim-to-real tooling out of the box. Needs an NVIDIA GPU.</span>
+        </a>
+        <a class="res" href="https://github.com/leggedrobotics/legged_gym" target="_blank" rel="noopener">
+          <span class="res__arrow">↗</span>
+          <span class="res__kind">Code</span>
+          <span class="res__title">legged_gym + rsl_rl</span>
+          <span class="res__by">Robotic Systems Lab · ETH Zürich</span>
+          <span class="res__why">The reference implementation of "train a quadruped to walk in minutes". Read it end to end, because the reward terms alone teach you more than a semester of theory.</span>
+        </a>
+        <a class="res" href="https://github.com/stack-of-tasks/pinocchio" target="_blank" rel="noopener">
+          <span class="res__arrow">↗</span>
+          <span class="res__kind">Library</span>
+          <span class="res__title">Pinocchio</span>
+          <span class="res__by">Stack of Tasks · LAAS-CNRS</span>
+          <span class="res__why">Rigid-body dynamics and its analytical derivatives, fast enough for control loops. What you reach for when you write your own whole-body controller.</span>
+        </a>
+        <a class="res" href="https://drake.mit.edu/" target="_blank" rel="noopener">
+          <span class="res__arrow">↗</span>
+          <span class="res__kind">Toolbox</span>
+          <span class="res__title">Drake</span>
+          <span class="res__by">Toyota Research Institute · MIT</span>
+          <span class="res__why">Model-based design done seriously: multibody dynamics plus convex optimization and contact-implicit trajectory optimization in one toolbox.</span>
+        </a>
+        <a class="res" href="https://docs.ros.org/en/jazzy/" target="_blank" rel="noopener">
+          <span class="res__arrow">↗</span>
+          <span class="res__kind">Framework</span>
+          <span class="res__title">ROS 2 documentation</span>
+          <span class="res__by">Open Robotics</span>
+          <span class="res__why">Not glamorous, unavoidable. Do the tutorials up to lifecycle nodes and tf2, because every robot you will touch in a lab speaks this.</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Papers -->
+    <div class="res-block reveal">
+      <div class="res-block__head">
+        <h3>03. Papers that changed legged robotics</h3>
+        <span class="res-block__note">These are the ones in the audio notebook</span>
+      </div>
+      <div class="res-list">
+        <a class="res" href="https://www.science.org/doi/10.1126/scirobotics.aau5872" target="_blank" rel="noopener">
+          <span class="res__arrow">↗</span>
+          <span class="res__kind">Science Robotics · 2019</span>
+          <span class="res__title">Learning agile and dynamic motor skills for legged robots</span>
+          <span class="res__by">Hwangbo et al. · ETH Zürich</span>
+          <span class="res__why">The paper that made sim-to-real RL credible on real hardware: learn the actuator, and the policy transfers. Start your reading here.</span>
+        </a>
+        <a class="res" href="https://www.science.org/doi/10.1126/scirobotics.abc5986" target="_blank" rel="noopener">
+          <span class="res__arrow">↗</span>
+          <span class="res__kind">Science Robotics · 2020</span>
+          <span class="res__title">Learning quadrupedal locomotion over challenging terrain</span>
+          <span class="res__by">Lee et al. · ETH Zürich</span>
+          <span class="res__why">Teacher and student training with proprioception only. ANYmal crossing mud, snow and rubble without ever seeing the ground.</span>
+        </a>
+        <a class="res" href="https://www.science.org/doi/10.1126/scirobotics.abk2822" target="_blank" rel="noopener">
+          <span class="res__arrow">↗</span>
+          <span class="res__kind">Science Robotics · 2022</span>
+          <span class="res__title">Learning robust perceptive locomotion in the wild</span>
+          <span class="res__by">Miki et al. · ETH Zürich</span>
+          <span class="res__why">How to use vision without trusting it: an attention-based belief state that falls back on proprioception when the elevation map lies.</span>
+        </a>
+        <a class="res" href="https://arxiv.org/abs/2109.11978" target="_blank" rel="noopener">
+          <span class="res__arrow">↗</span>
+          <span class="res__kind">CoRL · 2021</span>
+          <span class="res__title">Learning to Walk in Minutes Using Massively Parallel Deep RL</span>
+          <span class="res__by">Rudin et al. · ETH Zürich</span>
+          <span class="res__why">The training recipe behind legged_gym, and the reason a student with one GPU can now reproduce this work.</span>
+        </a>
+        <a class="res" href="https://ashish-kmr.github.io/rma-legged-robots/" target="_blank" rel="noopener">
+          <span class="res__arrow">↗</span>
+          <span class="res__kind">RSS · 2021</span>
+          <span class="res__title">RMA: Rapid Motor Adaptation</span>
+          <span class="res__by">Kumar, Fu, Pathak, Malik · CMU / Berkeley</span>
+          <span class="res__why">Adapting to a new payload or a slippery floor within a fraction of a second, by estimating the environment from recent state history.</span>
+        </a>
+        <a class="res" href="https://arxiv.org/abs/1008.5410" target="_blank" rel="noopener">
+          <span class="res__arrow">↗</span>
+          <span class="res__kind">Foundational · 2012</span>
+          <span class="res__title">Capturability-based analysis of legged locomotion</span>
+          <span class="res__by">Koolen, de Boer, Rebula, Goswami, Pratt</span>
+          <span class="res__why">The capture-point theory behind push recovery, the classical, model-based counterweight to everything above. It is what my Obedience biped is built on.</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Hardware -->
+    <div class="res-block reveal">
+      <div class="res-block__head">
+        <h3>04. Open hardware &amp; staying current</h3>
+        <span class="res-block__note">If you want to build, not only train</span>
+      </div>
+      <div class="res-list">
+        <a class="res" href="https://open-dynamic-robot-initiative.github.io/" target="_blank" rel="noopener">
+          <span class="res__arrow">↗</span>
+          <span class="res__kind">Open hardware</span>
+          <span class="res__title">Open Dynamic Robot Initiative</span>
+          <span class="res__by">MPI-IS &amp; NYU · Solo 8 / Solo 12</span>
+          <span class="res__why">A torque-controlled quadruped you can actually build: full BOM, 3D-printable parts, open firmware. The realistic entry point to real legged hardware.</span>
+        </a>
+        <a class="res" href="https://github.com/mjbots/moteus" target="_blank" rel="noopener">
+          <span class="res__arrow">↗</span>
+          <span class="res__kind">Actuation</span>
+          <span class="res__title">moteus controllers</span>
+          <span class="res__by">mjbots · open source</span>
+          <span class="res__why">Small, cheap field-oriented-control drivers built for quasi-direct-drive legs. Read the docs even if you buy something else, because they explain what a leg actuator needs.</span>
+        </a>
+        <a class="res" href="https://odriverobotics.com/" target="_blank" rel="noopener">
+          <span class="res__arrow">↗</span>
+          <span class="res__kind">Actuation</span>
+          <span class="res__title">ODrive</span>
+          <span class="res__by">Commercial · open roots</span>
+          <span class="res__why">The other standard BLDC driver in hobby robotics, with a gentler learning curve and a large community of working builds.</span>
+        </a>
+        <a class="res" href="https://www.weeklyrobotics.com/" target="_blank" rel="noopener">
+          <span class="res__arrow">↗</span>
+          <span class="res__kind">Newsletter</span>
+          <span class="res__title">Weekly Robotics</span>
+          <span class="res__by">Mat Sadowski · free</span>
+          <span class="res__why">Five links a week, no hype, heavy on real engineering. The single cheapest way to stay current once your courses are done.</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= MENTORING ================= -->
+<section id="mentoring">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="ghost-num">03</span>
+      <span class="label">03 · Mentoring</span>
+      <h2 class="h-section">30 min conmigo</h2>
+      <p class="body-text">A one-to-one call, in Spanish, about where you are and what to do next. Bring your CV, your project or your applications. I have done the scholarship, the lab application and the hardware from Lima, and I will tell you what actually moved the needle.</p>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <div class="mentor-panel dark noise">
+      <div class="mentor reveal">
+        <div>
+          <span class="lang-tag">ES · Asesoría 1:1</span>
+          <div class="mentor__price">
+            <span class="mentor__amount">30 USD</span>
+            <span class="mentor__alt">S/ 90 si eres de Perú · Yape</span>
+          </div>
+          <ul class="mentor__includes" lang="es">
+            <li>30 minutos por videollamada, en español.</li>
+            <li>Revisión de tu CV, tu proyecto o tu postulación a un laboratorio, beca o summer school.</li>
+            <li>Una ruta concreta de estudio con los recursos de esta página, según dónde estés hoy.</li>
+            <li>Te quedas con las notas de la sesión por escrito.</li>
+          </ul>
+          <div class="row gap-s">
+            <a class="btn solid" href="mailto:angor.root@gmail.com?subject=Asesor%C3%ADa%2030%20min%20-%20Robotics&amp;body=Hola%20Caleb%2C%0A%0AQuiero%20agendar%20los%2030%20minutos.%0A%0AD%C3%B3nde%20estoy%20hoy%3A%20%0AEn%20qu%C3%A9%20quiero%20ayuda%3A%20%0AZona%20horaria%20y%20horarios%20posibles%3A%20%0APago%3A%20Yape%20(S%2F%2090)%20%2F%20Wise%20(30%20USD)%0A%0AGracias.">Agendar 30 min conmigo</a>
+            <a class="btn on-dark" href="mailto:angor.root@gmail.com">angor.root@gmail.com</a>
+          </div>
+        </div>
+
+        <div class="pay" lang="es">
+          <div class="pay__method">
+            <span class="pay__label">Yape <b>S/ 90</b></span>
+            <div class="pay__frame">
+              <img src="../assets/media/yape-qr.png" alt="Código QR de Yape a nombre de Caleb Churata" id="yapeQr">
+              <div class="pay__fallback" id="yapeQrFallback" hidden>
+                <b>QR Yape</b>
+                <span>Escríbeme y te lo envío<br>angor.root@gmail.com</span>
+              </div>
+            </div>
+            <p class="pay__foot">Escanea desde tu app de Yape y escribe el monto.<br>Manda la captura al correo y agendamos.</p>
+          </div>
+
+          <div class="pay__method pay__method--wire">
+            <span class="pay__label">Wise <b>30 USD</b></span>
+            <p class="pay__foot">Desde un banco de EE. UU., transferencia nacional ACH o wire. Desde cualquier otro país, transferencia SWIFT.</p>
+            <dl class="pay__fields">
+              <div>
+                <dt>Titular</dt>
+                <dd><button type="button" class="pay__copy" data-copy="Caleb Isaias Churata Berna"><span>Caleb Isaias Churata Berna</span><span class="pay__hint">copiar</span></button></dd>
+              </div>
+              <div>
+                <dt>Número de cuenta</dt>
+                <dd><button type="button" class="pay__copy" data-copy="211888028001"><span>211888028001</span><span class="pay__hint">copiar</span></button></dd>
+              </div>
+              <div>
+                <dt>Routing, ACH y wire</dt>
+                <dd><button type="button" class="pay__copy" data-copy="101019628"><span>101019628</span><span class="pay__hint">copiar</span></button></dd>
+              </div>
+              <div>
+                <dt>Swift / BIC</dt>
+                <dd><button type="button" class="pay__copy" data-copy="TRWIUS35XXX"><span>TRWIUS35XXX</span><span class="pay__hint">copiar</span></button></dd>
+              </div>
+              <div>
+                <dt>Tipo de cuenta</dt>
+                <dd><button type="button" class="pay__copy" data-copy="Checking"><span>Checking</span><span class="pay__hint">copiar</span></button></dd>
+              </div>
+              <div>
+                <dt>Banco</dt>
+                <dd><button type="button" class="pay__copy" data-copy="Wise US Inc, 108 W 13th St, Wilmington, DE, 19801, United States"><span>Wise US Inc, 108 W 13th St, Wilmington, DE, 19801, United States</span><span class="pay__hint">copiar</span></button></dd>
+              </div>
+            </dl>
+          </div>
+        </div>
+      </div>
+
+      <div class="notes reveal">
+        <div class="note" lang="es">
+          <p class="note__q">¿No tienes el dinero porque todavía eres pequeño?</p>
+          <p class="note__a">Te recomiendo ver algunas opciones de financiamiento dentro de tu familia, familiares o entorno cercano. Y mientras tanto: todo lo demás de esta página, los recursos y el audio, es gratis y siempre lo va a ser.</p>
+        </div>
+        <div class="note" lang="es">
+          <span class="note__free">Gratuito</span>
+          <p class="note__q">¿Eres una organización o una fundación?</p>
+          <p class="note__a">Si te gustaría contactar conmigo para dar una charla a tus becarios o alumnos, es completamente gratuito. Escribe a <a href="mailto:angor.root@gmail.com?subject=Charla%20para%20becarios%20-%20Robotics">angor.root@gmail.com</a>.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer class="site-footer" id="contact">
+  <div class="wrap">
+    <p class="footer-slogan">Everything here is free. <span class="accent-word">Use it.</span></p>
+
+    <div class="footer-grid">
+      <div class="footer-col">
+        <span class="label">Caleb Churata</span>
+        <p>Mechatronics Engineering student and Robotics Student Fellow at RSL, ETH Zürich. Legged locomotion, sim-to-real RL, and open, low-cost robotics platforms.</p>
+      </div>
+      <div class="footer-col">
+        <span class="label">This page</span>
+        <a href="#audio">Audio, NotebookLM</a>
+        <a href="#resources">Library</a>
+        <a href="#mentoring">30 min conmigo</a>
+      </div>
+      <div class="footer-col">
+        <span class="label">Connect</span>
+        <a href="mailto:angor.root@gmail.com">angor.root@gmail.com</a>
+        <a href="https://github.com/angor-root" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://www.linkedin.com/in/caleb-churata" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>Caleb Churata, Lima, Peru</span>
+      <span>© 2026</span>
+    </div>
+  </div>
+</footer>
+
+<script src="../js/main.js"></script>
+<script>
+  // El QR de Yape es un archivo que puede no estar todavía: si no carga,
+  // mostramos el aviso de contacto en su lugar.
+  (function () {
+    var img = document.getElementById("yapeQr");
+    var fb = document.getElementById("yapeQrFallback");
+    if (img && fb) {
+      var showFallback = function () { img.hidden = true; fb.hidden = false; };
+      img.addEventListener("error", showFallback);
+      if (img.complete && img.naturalWidth === 0) showFallback();
+    }
+
+    // Copiar los datos de Wise de un toque. Sin portapapeles disponible,
+    // se selecciona el valor para que se pueda copiar a mano.
+    function feedback(btn, text) {
+      var hint = btn.querySelector(".pay__hint");
+      if (!hint) return;
+      var previous = hint.textContent;
+      hint.textContent = text;
+      btn.classList.add("is-copied");
+      setTimeout(function () {
+        hint.textContent = previous;
+        btn.classList.remove("is-copied");
+      }, 1800);
+    }
+    function selectValue(btn) {
+      var node = btn.firstElementChild;
+      if (!node || !window.getSelection) return;
+      var range = document.createRange();
+      range.selectNodeContents(node);
+      var sel = window.getSelection();
+      sel.removeAllRanges();
+      sel.addRange(range);
+    }
+    Array.prototype.forEach.call(document.querySelectorAll(".pay__copy"), function (btn) {
+      btn.addEventListener("click", function () {
+        var value = btn.getAttribute("data-copy") || "";
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(value).then(
+            function () { feedback(btn, "copiado"); },
+            function () { selectValue(btn); feedback(btn, "selecciona"); }
+          );
+        } else {
+          selectValue(btn);
+          feedback(btn, "selecciona");
+        }
+      });
+    });
+  })();
+</script>
+</body>
+</html>

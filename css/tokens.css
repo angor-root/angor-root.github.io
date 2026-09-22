@@ -1,0 +1,176 @@
+/* ============================================================
+   TOKENS — sistema tipográfico y de color, en la misma familia
+   editorial (paper/ink/acento único) que ved-epyl-site, adaptado
+   a un acento propio de robótica en vez de verde/bermellón.
+   ============================================================ */
+
+:root {
+  --paper: #F5F3EE;
+  --paper-2: #EAE6DD;
+  --ink: #101112;
+  --ink-soft: #1E1F20;
+  --stone: #85807A;
+  --stone-light: #B3AEA6;
+  --line: #E1DCD2;
+  --line-dark: rgba(245, 243, 238, 0.14);
+
+  --accent: #C1571A;       /* ámbar/naranja técnico — color real de acentos del A2 y del hardware, un solo acento */
+  --accent-soft: #E0864A;
+
+  --m-xs: 8px; --m-s: 16px; --m-m: 24px; --m-l: 48px; --m-xl: 80px; --m-2xl: 120px;
+
+  --font-display: 'Fraunces', 'Playfair Display', serif;
+  --font-grotesk: 'Inter', 'Satoshi', sans-serif;
+  --font-mono: 'JetBrains Mono', 'IBM Plex Mono', monospace;
+
+  --ease: cubic-bezier(.16,.84,.44,1);
+  --max: 1180px;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-grotesk);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+img, video { max-width: 100%; display: block; }
+[hidden] { display: none !important; }  /* si no, la regla de arriba tapa el [hidden] del navegador */
+a { color: inherit; text-decoration: none; }
+
+.wrap {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding-inline: clamp(20px, 5vw, 48px);
+}
+
+section { padding-block: clamp(64px, 10vw, 108px); position: relative; scroll-margin-top: 64px; }
+
+/* ---------- Type scale ---------- */
+
+.h-hero {
+  font-family: var(--font-display);
+  font-weight: 300;
+  font-size: clamp(40px, 8vw, 104px);
+  line-height: 0.96;
+  letter-spacing: -0.03em;
+}
+
+.h-section {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(32px, 4.6vw, 60px);
+  line-height: 0.99;
+  letter-spacing: -0.02em;
+}
+
+.h-sub {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(22px, 2.6vw, 30px);
+  line-height: 1.08;
+  letter-spacing: -0.01em;
+}
+
+.accent { color: var(--accent); font-style: italic; }
+
+.ghost-num {
+  font-family: var(--font-display);
+  font-weight: 200;
+  font-size: clamp(80px, 14vw, 200px);
+  line-height: 1;
+  letter-spacing: -0.03em;
+  color: transparent;
+  -webkit-text-stroke: 1px var(--line);
+  position: absolute;
+  top: -10px; right: 0;
+  z-index: 0;
+  pointer-events: none;
+  user-select: none;
+}
+.dark .ghost-num { -webkit-text-stroke: 1px var(--line-dark); }
+
+.label {
+  font-family: var(--font-grotesk);
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--stone);
+}
+.label.on-dark { color: var(--stone-light); }
+
+.body-text {
+  font-family: var(--font-grotesk);
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 1.65;
+  max-width: 46ch;
+  color: var(--ink-soft);
+}
+.body-text.small { font-size: 14.5px; max-width: 40ch; }
+
+/* ---------- Buttons ---------- */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-grotesk);
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 15px 28px;
+  border: 1px solid var(--ink);
+  background: transparent;
+  color: var(--ink);
+  cursor: pointer;
+  transition: background .35s var(--ease), color .35s var(--ease), border-color .35s var(--ease);
+  white-space: nowrap;
+}
+.btn:hover { background: var(--ink); color: var(--paper); }
+
+.btn.solid { background: var(--ink); color: var(--paper); }
+.btn.solid:hover { background: var(--accent); border-color: var(--accent); color: var(--paper); }
+
+.btn.on-dark { border-color: var(--line-dark); color: var(--paper); }
+.btn.on-dark:hover { background: var(--paper); color: var(--ink); }
+
+.btn.accent-btn { border-color: var(--accent); color: var(--accent); }
+.btn.accent-btn:hover { background: var(--accent); color: var(--paper); }
+
+/* ---------- Dark section variant ---------- */
+
+.dark { background: var(--ink); color: var(--paper); }
+.dark .body-text { color: var(--stone-light); }
+
+/* ---------- Grain overlay ---------- */
+
+.noise { position: relative; }
+.noise::after {
+  content: "";
+  position: absolute; inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.05'/%3E%3C/svg%3E");
+  pointer-events: none;
+  mix-blend-mode: overlay;
+}
+
+/* ---------- Scroll reveal ---------- */
+
+.reveal { opacity: 0; transform: translateY(24px); transition: opacity .8s var(--ease), transform .8s var(--ease); }
+.reveal.is-visible { opacity: 1; transform: translateY(0); }
+@media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; transition: none; } }
+
+/* ---------- Utility ---------- */
+
+.stack { display: flex; flex-direction: column; }
+.row { display: flex; flex-wrap: wrap; }
+.gap-s { gap: 16px; }
+.gap-m { gap: 24px; }
+.gap-l { gap: 48px; }
