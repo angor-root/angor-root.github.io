@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Caleb Churata, CV</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,700&family=Inter:wght@400;500;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/tokens.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23101112'/%3E%3Ctext x='50' y='68' font-family='Georgia,serif' font-size='58' fill='%23C1571A' text-anchor='middle'%3EC%3C/text%3E%3C/svg%3E">
+<style>
+  body { max-width: 800px; margin: 0 auto; padding: 72px 28px 110px; }
+  .back {
+    font-family: var(--font-mono); font-size: 12px; letter-spacing: .08em; text-transform: uppercase;
+    color: var(--stone); display: inline-block; margin-bottom: 48px;
+  }
+  .back:hover { color: var(--accent); }
+
+  .cvhead { display: flex; justify-content: space-between; align-items: flex-end; gap: 24px; margin-bottom: 56px; flex-wrap: wrap; border-bottom: 1px solid var(--line); padding-bottom: 32px; }
+  .cvhead h1 { margin: 0 0 8px; font-family: var(--font-display); font-weight: 400; font-size: clamp(30px, 4vw, 44px); letter-spacing: -0.02em; }
+  .cvhead .headline { color: var(--stone); font-size: 0.98rem; margin: 0 0 12px; max-width: 42ch; }
+  .cvhead .contact { font-family: var(--font-mono); font-size: 12px; letter-spacing: .04em; color: var(--stone); line-height: 1.9; }
+  .cvhead .contact a { color: var(--ink); border-bottom: 1px solid var(--line); }
+  .cvhead .contact a:hover { color: var(--accent); border-color: var(--accent); }
+
+  .cv-sec { margin-bottom: 48px; }
+  .cv-sec h2 { font-family: var(--font-mono); font-size: 12px; text-transform: uppercase; letter-spacing: 0.14em; color: var(--accent); font-weight: 700; margin: 0 0 24px; }
+  .entry { padding: 20px 0; border-top: 1px solid var(--line); }
+  .entry:first-of-type { border-top: none; padding-top: 0; }
+  .entry .row { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; align-items: baseline; }
+  .entry h3 { margin: 0; font-family: var(--font-display); font-weight: 400; font-size: 1.15rem; }
+  .entry .dates { font-family: var(--font-mono); font-size: 11px; letter-spacing: .04em; color: var(--stone); white-space: nowrap; }
+  .entry .place { font-size: 0.86rem; color: var(--stone); margin: 4px 0 8px; }
+  .entry p { margin: 0; font-size: 0.92rem; color: var(--ink-soft); line-height: 1.6; max-width: 62ch; }
+
+  .skills-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px 32px; }
+  .skills-grid .sk h4 { margin: 0 0 6px; font-family: var(--font-mono); font-size: 12px; text-transform: uppercase; letter-spacing: .06em; color: var(--ink); }
+  .skills-grid .sk p { margin: 0; font-size: 0.88rem; color: var(--stone); line-height: 1.6; }
+
+  @media print {
+    .back, .noprint { display: none !important; }
+    body { padding: 16px 36px 40px; max-width: none; }
+    a { text-decoration: none; color: inherit; }
+  }
+</style>
+</head>
+<body>
+
+<a class="back noprint" href="../index.html">← Back to portfolio</a>
+
+<div class="cvhead">
+  <div>
+    <h1>Caleb Churata</h1>
+    <p class="headline">Mechatronics Engineering Student · Robotics Student Fellow, RSL ETH Zürich</p>
+    <p class="contact">Lima, Peru, currently Zürich, Switzerland<br><a href="mailto:caleb@leggedrobotics.com">caleb@leggedrobotics.com</a> · <a href="https://github.com/angor-root">github.com/angor-root</a></p>
+  </div>
+  <button class="btn solid noprint" onclick="window.print()">Download / print PDF</button>
+</div>
+
+<div class="cv-sec">
+  <h2>Education</h2>
+  <div class="entry">
+    <div class="row"><h3>UTEC, Universidad de Ingeniería y Tecnología</h3><span class="dates">2022-08 to Present</span></div>
+    <p class="place">Mechatronics Engineering, Bachelor's, Lima, Peru</p>
+  </div>
+  <div class="entry">
+    <div class="row"><h3>ETH Zürich, Robotics Student Fellowship Program (RobotX)</h3><span class="dates">2026-07 to 2026-08</span></div>
+    <p class="place">Robotics, Zürich, Switzerland</p>
+  </div>
+</div>
+
+<div class="cv-sec">
+  <h2>Experience</h2>
+  <div class="entry">
+    <div class="row"><h3>Robotics Student Fellow, Robotic Systems Lab, ETH Zürich</h3><span class="dates">2026-07 to Present</span></div>
+    <p class="place">Zürich, Switzerland</p>
+    <p>Robotics Student Fellow in the ETH Robotics Student Fellowship (RSF) program, doing legged robotics research with the RSL team.</p>
+  </div>
+  <div class="entry">
+    <div class="row"><h3>Director de Proyecto, IEEE Robotics &amp; Automation Society UTEC</h3><span class="dates">2026-02 to Present</span></div>
+    <p class="place">Lima, Peru</p>
+    <p>Leading the LÁK Biped project, a bipedal robot inspired by Disney's BDX robot.</p>
+  </div>
+  <div class="entry">
+    <div class="row"><h3>Presidente, IEEE Robotics &amp; Automation Society UTEC</h3><span class="dates">2025-01 to 2026-02</span></div>
+    <p class="place">Barranco, Peru</p>
+  </div>
+  <div class="entry">
+    <div class="row"><h3>ETH Robotics Summer School 2026, Participant</h3><span class="dates">2026-07</span></div>
+    <p class="place">Geneva, Switzerland</p>
+    <p>One of 50 students worldwide invited to the ETH Robotics Summer School 2026, an intensive week combining robotics theory with hands-on programming of autonomous, all-terrain quadruped robots, culminating in a search-and-rescue competition.</p>
+  </div>
+</div>
+
+<div class="cv-sec">
+  <h2>Awards</h2>
+  <div class="entry">
+    <div class="row"><h3>2nd Place, IROS 2025 (Volting Cup)</h3><span class="dates">2025-10</span></div>
+    <p>Awarded for the FreeWheels project, an intuitive-control wheelchair for athletes, presented at Volting Cup 2025 in China.</p>
+  </div>
+  <div class="entry">
+    <div class="row"><h3>Smart City Challenge, Winning Team</h3><span class="dates">2025-04</span></div>
+    <p>Awarded by Darat Latam / UTEC Ventures, recognizing the project with the greatest potential impact on smart urban environments.</p>
+  </div>
+</div>
+
+<div class="cv-sec">
+  <h2>Projects</h2>
+  <div class="entry">
+    <h3>Obedience, Bipedal Robot</h3>
+    <p>Autonomous bipedal robot with capture-point walking control, built on ROS 2, MuJoCo, and Pinocchio.</p>
+  </div>
+  <div class="entry">
+    <h3>FreeWheels</h3>
+    <p>Intuitive-control wheelchair for athletes. 2nd place, IROS 2025 China; winner, Smart City Challenge.</p>
+  </div>
+  <div class="entry">
+    <h3>LÁK Biped</h3>
+    <p>Bipedal robot inspired by Disney's BDX robot, IEEE RAS UTEC.</p>
+  </div>
+</div>
+
+<div class="cv-sec">
+  <h2>Skills</h2>
+  <div class="skills-grid">
+    <div class="sk"><h4>Robotics &amp; Controls</h4><p>ROS 2, MuJoCo, Pinocchio, legged locomotion, capture-point control, sim-to-real reinforcement learning</p></div>
+    <div class="sk"><h4>Embedded &amp; Hardware</h4><p>PCB design (KiCad), ESP32, micro-ROS, Arduino</p></div>
+    <div class="sk"><h4>Programming</h4><p>Python, C++</p></div>
+    <div class="sk"><h4>Languages</h4><p>Spanish (native), English (professional working proficiency)</p></div>
+  </div>
+</div>
+
+</body>
+</html>
