@@ -164,6 +164,13 @@
 .dark .statement:last-child { border-bottom-color: var(--line-dark); }
 
 .statement__num { font-family: var(--font-mono); font-size: 13px; color: var(--stone); padding-top: 8px; }
+/* En sección oscura el gris y el acento oscuros no llegan a 4.5:1, van las variantes claras */
+.dark .statement__num, .dark .statement__place { color: var(--stone-light); }
+.dark .statement__date { color: var(--accent-soft); }
+.dark .editorial-list .num, .dark .editorial-list .desc { color: var(--stone-light); }
+.dark .editorial-list .tag { color: var(--accent-soft); border-color: var(--accent-soft); }
+.dark .editorial-list .more { color: var(--paper); }
+.dark .editorial-list .more:hover { color: var(--accent-soft); }
 .statement__body { max-width: 74ch; }
 .statement__meta { display: flex; flex-wrap: wrap; gap: 6px 14px; align-items: baseline; margin-bottom: 8px; }
 .statement__date { font-family: var(--font-mono); font-size: 12px; letter-spacing: .06em; color: var(--accent); font-weight: 700; }
@@ -185,6 +192,9 @@
 }
 .split--reverse .split__media { order: 2; }
 .split__media { position: relative; aspect-ratio: 4/5; overflow: hidden; background: var(--paper-2); }
+/* El vídeo del A2 es un lado a lado sim/real: en 4:5 se recorta justo lo que hay que ver */
+.split__media--wide { aspect-ratio: 16/9; }
+.split__media--wide video { object-fit: contain; background: var(--ink); color: var(--paper); }
 .split__media img, .split__media video { width: 100%; height: 100%; object-fit: cover; filter: contrast(1.04) saturate(0.96); }
 .split__text { max-width: 46ch; }
 

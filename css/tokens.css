@@ -9,13 +9,13 @@
   --paper-2: #EAE6DD;
   --ink: #101112;
   --ink-soft: #1E1F20;
-  --stone: #85807A;
-  --stone-light: #B3AEA6;
+  --stone: #736F69;        /* 4.50:1 sobre paper, cumple AA para texto pequeño */
+  --stone-light: #B3AEA6;  /* 8.57:1 sobre ink, la variante para fondo oscuro */
   --line: #E1DCD2;
   --line-dark: rgba(245, 243, 238, 0.14);
 
-  --accent: #C1571A;       /* ámbar/naranja técnico — color real de acentos del A2 y del hardware, un solo acento */
-  --accent-soft: #E0864A;
+  --accent: #B55218;       /* ámbar técnico del A2 y del hardware, un solo acento. 4.53:1 sobre paper */
+  --accent-soft: #E0864A;  /* 6.91:1 sobre ink, la variante para fondo oscuro */
 
   --m-xs: 8px; --m-s: 16px; --m-m: 24px; --m-l: 48px; --m-xl: 80px; --m-2xl: 120px;
 
@@ -138,6 +138,9 @@ section { padding-block: clamp(64px, 10vw, 108px); position: relative; scroll-ma
 
 .btn.solid { background: var(--ink); color: var(--paper); }
 .btn.solid:hover { background: var(--accent); border-color: var(--accent); color: var(--paper); }
+/* Sobre fondo oscuro el sólido en ink es una caja invisible: ahí el primario va en acento */
+.dark .btn.solid { background: var(--accent); border-color: var(--accent); color: var(--paper); }
+.dark .btn.solid:hover { background: var(--paper); border-color: var(--paper); color: var(--ink); }
 
 .btn.on-dark { border-color: var(--line-dark); color: var(--paper); }
 .btn.on-dark:hover { background: var(--paper); color: var(--ink); }

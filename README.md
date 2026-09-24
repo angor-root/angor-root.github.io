@@ -15,6 +15,7 @@ HTML pages, two stylesheets and two scripts, deployed as-is.
 | `/`          | Portfolio: Robot Lab (3D A2 viewer), experience, projects, CV              |
 | `/robotics/` | Curated robotics resources, a NotebookLM audio companion, 1:1 mentoring    |
 | `/cv/`       | Full CV in HTML; the PDF lives in `assets/cv/`                              |
+| `/legal/`    | Privacy notice and the terms of the mentoring session                      |
 
 ## Layout
 
@@ -22,6 +23,8 @@ HTML pages, two stylesheets and two scripts, deployed as-is.
 index.html            portfolio
 robotics/index.html   robotics resources
 cv/index.html         CV
+legal/index.html      privacy and terms
+404.html              not-found page, served by GitHub Pages
 css/tokens.css        design system: paper/ink palette, type scale, buttons
 css/layout.css        portfolio sections
 css/robotics.css      resources page
@@ -62,8 +65,9 @@ cd scripts && npm install && node gen_cv_pdf.js
 
 ## Deployment
 
-Pushing to `main` runs `.github/workflows/deploy.yml`, which publishes the
-repository root to the `gh-pages` branch.
+GitHub Pages serves the `main` branch directly. There is no build step and no
+workflow: push and it is live. `.nojekyll` keeps Pages from running the site
+through Jekyll.
 
 ## License
 

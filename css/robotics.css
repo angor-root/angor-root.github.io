@@ -56,15 +56,13 @@
 }
 .page-head__cta { display: flex; gap: 16px; margin-top: 40px; flex-wrap: wrap; }
 
-/* .btn.solid es ink sobre ink en cabecera y panel oscuro: ahí el primario va en acento */
-.page-head .btn.solid,
-.mentor-panel .btn.solid {
+/* La cabecera es oscura pero no lleva la clase .dark, así que va aparte */
+.page-head .btn.solid {
   background: var(--accent);
   border-color: var(--accent);
   color: var(--paper);
 }
-.page-head .btn.solid:hover,
-.mentor-panel .btn.solid:hover {
+.page-head .btn.solid:hover {
   background: var(--paper);
   border-color: var(--paper);
   color: var(--ink);
@@ -149,6 +147,7 @@
   font-family: var(--font-mono); font-size: 11px; letter-spacing: .08em; text-transform: uppercase;
   color: var(--stone);
 }
+.dark .res-block__note { color: var(--stone-light); }
 
 .res-list { display: grid; grid-template-columns: 1fr 1fr; gap: 0 1px; background: var(--line); }
 @media (max-width: 760px) { .res-list { grid-template-columns: 1fr; } }
@@ -170,6 +169,7 @@
   font-family: var(--font-mono); font-size: 10px; letter-spacing: .12em; text-transform: uppercase;
   color: var(--accent); display: block; margin-bottom: 10px;
 }
+.dark .res__kind { color: var(--accent-soft); }
 .res__title {
   font-family: var(--font-display); font-weight: 400;
   font-size: clamp(18px, 2vw, 21px); line-height: 1.15; letter-spacing: -.01em;
@@ -183,6 +183,7 @@
 .res:hover .res__by { color: var(--stone-light); }
 .dark .res .res__by { color: var(--stone-light); }
 .dark .res:hover .res__by { color: var(--stone); }
+.dark .res:hover .res__arrow { color: var(--stone); }
 .res__why {
   font-size: 14px; line-height: 1.6; color: var(--ink-soft);
   display: block; margin-top: 12px; max-width: 46ch;
@@ -192,7 +193,7 @@
 .dark .res:hover .res__why { color: var(--ink-soft); }
 .res__arrow {
   position: absolute; top: 24px; right: 24px;
-  font-family: var(--font-mono); font-size: 13px; color: var(--stone);
+  font-family: var(--font-mono); font-size: 13px; color: var(--stone-light);
   transition: transform .3s var(--ease), color .3s var(--ease);
 }
 .res:hover .res__arrow { color: var(--accent-soft); transform: translate(2px, -2px); }
@@ -275,7 +276,7 @@
 .pay__fields > div { background: var(--ink); padding: 11px 13px; }
 .pay__fields dt {
   font-family: var(--font-mono); font-size: 10px; letter-spacing: .1em; text-transform: uppercase;
-  color: var(--stone);
+  color: var(--stone-light);
 }
 .pay__fields dd { margin: 5px 0 0; }
 
@@ -290,7 +291,7 @@
 .pay__hint {
   flex: none;
   font-size: 10px; letter-spacing: .1em; text-transform: uppercase;
-  color: var(--stone);
+  color: var(--stone-light);
   transition: color .25s var(--ease);
 }
 .pay__copy:hover .pay__hint,
@@ -314,7 +315,7 @@
 .note__free {
   display: inline-block; margin-bottom: 14px;
   font-family: var(--font-mono); font-size: 10px; letter-spacing: .14em; text-transform: uppercase;
-  color: var(--accent); border: 1px solid var(--accent); padding: 4px 9px;
+  color: var(--accent-soft); border: 1px solid var(--accent-soft); padding: 4px 9px;
 }
 
 /* ---------- Marca de idioma ---------- */
@@ -427,7 +428,7 @@
   .dark .res .res__why { color: #C9C4BB; }
   .dark .res:hover .res__why { color: #C9C4BB; }
   .dark .res:hover .res__by { color: var(--stone-light); }
-  .res__arrow { top: 22px; right: 0; color: var(--accent); }
+  .res__arrow { top: 22px; right: 0; color: var(--accent-soft); }
 
   /* --- Asesoría --- */
 

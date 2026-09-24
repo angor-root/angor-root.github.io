@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Page not found, Caleb Churata</title>
+<meta name="description" content="That page does not exist on angor-root.github.io. Here is the way back.">
+<meta name="robots" content="noindex">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;1,9..144,400&family=Inter:wght@400;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/tokens.css">
+
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta name="theme-color" content="#101112">
+
+<style>
+  body {
+    min-height: 100svh;
+    display: flex; flex-direction: column; justify-content: center;
+    padding: clamp(32px, 8vw, 80px) clamp(20px, 5vw, 48px);
+    position: relative; overflow-x: hidden;
+  }
+  body::before {
+    content: ""; position: absolute; inset: 0;
+    background: radial-gradient(120% 90% at 10% 0%, rgba(224,134,74,.22) 0%, transparent 58%);
+    pointer-events: none;
+  }
+  .inner { position: relative; z-index: 1; max-width: var(--max); margin: 0 auto; width: 100%; }
+  .code {
+    font-family: var(--font-mono); font-size: 13px; letter-spacing: .16em; text-transform: uppercase;
+    color: var(--accent-soft); display: block; margin-bottom: 22px;
+  }
+  h1 {
+    font-family: var(--font-display); font-weight: 300;
+    font-size: clamp(36px, 7vw, 86px); line-height: .99; letter-spacing: -.03em;
+    margin: 0; max-width: 15ch;
+  }
+  h1 em { color: var(--accent-soft); font-style: italic; }
+  p { margin: 26px 0 0; max-width: 46ch; font-size: clamp(16px, 1.6vw, 18px); line-height: 1.7; color: var(--stone-light); }
+  .links { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 40px; }
+  @media (max-width: 600px) { .links .btn { width: 100%; justify-content: center; padding: 17px 20px; } }
+</style>
+</head>
+<body class="dark">
+  <div class="inner">
+    <span class="code">Error 404</span>
+    <h1>This page walked off <em>the map</em></h1>
+    <p>The link is broken or the page moved. Nothing here is lost for good, the whole site is only a handful of pages.</p>
+    <div class="links">
+      <a class="btn solid" href="/">Back to the portfolio</a>
+      <a class="btn on-dark" href="/robotics/">Robotics resources</a>
+      <a class="btn on-dark" href="/cv/">CV</a>
+    </div>
+  </div>
+</body>
+</html>
