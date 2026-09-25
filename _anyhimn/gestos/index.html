@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Prueba de gestos</title>
+<style>
+ :root{--bg:#f4f4f2;--card:#fff;--ink:#1f1f1d;--muted:#6b6b66;--line:#dcdcd6;--accent:#2a78d6;--warn:#eb6834;--ok:#1baf7a}
+ @media (prefers-color-scheme:dark){:root{--bg:#1a1a19;--card:#262624;--ink:#f2f2ee;--muted:#b0afa6;--line:#3a3a37;--accent:#3987e5}}
+ *{box-sizing:border-box} body{margin:0;background:var(--bg);color:var(--ink);font-family:system-ui,sans-serif}
+ main{max-width:820px;margin:auto;padding:16px;display:grid;gap:14px}
+ .card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px}
+ h1{font-size:20px;margin:0} h2{font-size:16px;margin:0 0 10px}
+ #pagina{font-size:64px;font-weight:700;text-align:center;padding:18px 0;transition:background .3s;border-radius:10px}
+ #pagina.flash{background:color-mix(in srgb,var(--accent) 25%,transparent)}
+ .row{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+ video{width:160px;border-radius:8px;transform:scaleX(-1);background:#000}
+ .bar{position:relative;height:22px;background:color-mix(in srgb,var(--muted) 18%,transparent);border-radius:5px;flex:1;min-width:180px}
+ .bar i{position:absolute;left:0;top:0;bottom:0;background:var(--accent);border-radius:5px}
+ .bar b{position:absolute;top:-3px;bottom:-3px;width:3px;background:var(--warn)}
+ .lbl{width:88px;font-size:14px} .val{width:44px;font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+ button,select{font-size:16px;padding:8px 14px;border-radius:8px;border:1px solid var(--line);background:var(--card);color:var(--ink)}
+ button.primary{background:var(--accent);color:#fff;border:none}
+ #estado{font-size:14px;color:var(--muted)} #cal{font-size:15px;line-height:1.5}
+ #log{font-size:13px;color:var(--muted);max-height:140px;overflow:auto;margin:0;padding-left:18px}
+</style></head><body><main>
+ <div class="row"><h1>Prueba de gestos para pasar página</h1><span id="estado">sin cámara</span><button class="primary" id="start">Encender cámara</button></div>
+ <div class="card"><div id="pagina">Página 1</div>
+  <div class="row" style="justify-content:center"><button id="deshacer">Deshacer último pase (falso positivo)</button></div></div>
+ <div class="card"><h2>Señales en vivo</h2>
+  <div class="row"><video id="v" playsinline muted></video><div style="flex:1;display:grid;gap:8px" id="bars"></div></div></div>
+ <div class="card"><h2>Gestos → acción</h2><div class="row" id="mapa"></div></div>
+ <div class="card"><h2>Calibración (hazla con el violín en posición, tocando)</h2>
+  <div class="row"><select id="gcal"><option value="cejas">Cejas arriba</option><option value="ceno">Fruncir el ceño</option><option value="guinoDer">Guiño derecho</option><option value="guinoIzq">Guiño izquierdo</option></select>
+   <button class="primary" id="bcal">Calibrar</button></div>
+  <div id="cal"></div></div>
+ <div class="card"><h2>Registro</h2><ol id="log"></ol></div>
+</main>
+<script src="gestos.js"></script>
+<script>
+(async () => {
+const $ = id => document.getElementById(id);
+const NOMBRES = { cejas: 'Cejas', guinoDer: 'Guiño der.', guinoIzq: 'Guiño izq.', ceno: 'Ceño' };
+let pag = 1, g, historial = [];
+const setPag = (p, flash) => { pag = Math.max(1, p); $('pagina').textContent = 'Página ' + pag;
+  if (flash) { $('pagina').classList.add('flash'); setTimeout(() => $('pagina').classList.remove('flash'), 400); } };
+window.pageTurner = { next: () => { historial.push(pag); setPag(pag + 1, true); }, prev: () => { historial.push(pag); setPag(pag - 1, true); } };
+addEventListener('keydown', e => { if (['ArrowRight','PageDown','AudioVolumeDown'].includes(e.key)) pageTurner.next(); if (['ArrowLeft','PageUp','AudioVolumeUp'].includes(e.key)) pageTurner.prev(); });
+const logLine = t => { const li = document.createElement('li'); li.textContent = new Date().toLocaleTimeString() + ' · ' + t; $('log').prepend(li); };
+$('deshacer').onclick = () => { if (!historial.length) return; setPag(historial.pop()); const e = g?.log.at(-1); if (e) e.falso = true; logLine('deshecho (falso positivo)'); };
+
+for (const k of Object.keys(SENALES)) $('bars').insertAdjacentHTML('beforeend',
+  `<div class="row"><span class="lbl">${NOMBRES[k]}</span><div class="bar"><i id="i_${k}"></i><b id="b_${k}"></b></div><span class="val" id="v_${k}">–</span></div>`);
+
+function pintarMapa() {
+  $('mapa').innerHTML = '';
+  for (const k of Object.keys(SENALES)) {
+    const s = document.createElement('select');
+    s.innerHTML = `<option value="">—</option><option value="next">siguiente</option><option value="prev">anterior</option>`;
+    s.value = g.cfg.mapa[k] || ''; s.onchange = () => { g.cfg.mapa[k] = s.value || null; g.guardar(); };
+    const w = document.createElement('label'); w.className = 'row'; w.append(NOMBRES[k] + ' → ', s); $('mapa').append(w);
+  }
+}
+$('start').onclick = async () => {
+  $('estado').textContent = 'cargando modelo…';
+  g = await GestureTurner.create({
+    onGesture: (acc, ges) => logLine(`${NOMBRES[ges]} → ${acc === 'next' ? 'siguiente' : 'anterior'}`),
+    onFrame: (s, cara) => {
+      $('estado').textContent = cara ? 'rostro detectado' : 'sin rostro';
+      if (!s) return;
+      for (const k in s) { const x = Math.max(0, Math.min(1, s[k]));
+        $('i_' + k).style.width = (x * 100) + '%'; $('b_' + k).style.left = (g.cfg.umbral[k] * 100) + '%'; $('v_' + k).textContent = s[k].toFixed(2); }
+    },
+  });
+  await g.start($('v')); pintarMapa(); $('start').hidden = true;
+};
+const cuenta = async (txt, ms) => { for (let t = ms / 1000; t > 0; t--) { $('cal').textContent = `${txt} (${t} s)`; await new Promise(r => setTimeout(r, 1000)); } };
+$('bcal').onclick = async () => {
+  if (!g) return alertNoCam();
+  const k = $('gcal').value, m = g.cfg.mapa; const prev = { ...m }; for (const x in m) m[x] = null; // sin pases durante la calibración
+  await cuenta('Prepárate: en breve toca normal, SIN hacer el gesto', 3000);
+  const p1 = g.grabar(15000); await cuenta('1/2 · Toca normal, sin gesto', 15000); const reposo = await p1;
+  const p2 = g.grabar(12000); await cuenta(`2/2 · Haz el gesto (${NOMBRES[k]}) unas 5 veces, tocando`, 12000); const gesto = await p2;
+  Object.assign(m, prev);
+  const r = g.calibrar(reposo, gesto, k);
+  $('cal').innerHTML = `${NOMBRES[k]}: reposo p99 = ${r.base.toFixed(2)}, pico típico = ${r.pico.toFixed(2)} → umbral <b>${r.umbral.toFixed(2)}</b>. ` +
+    (r.separable ? '✅ Se separa bien del movimiento al tocar.' : '⚠️ Margen pequeño: probable falso positivo, prueba otro gesto.');
+};
+function alertNoCam() { $('cal').textContent = 'Primero enciende la cámara.'; }
+if (location.search.includes('auto')) { $('start').click(); $('mapa').closest('.card').hidden = true; }  // en la app: el mapeo se elige en Ajustes
+})();
+</script></body></html>
