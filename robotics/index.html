@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Robotics Resources, Caleb Churata</title>
+<meta name="description" content="Courses, simulators, papers and open hardware for legged robotics.">
+<link rel="stylesheet" href="../css/site.css">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../favicon.ico" sizes="32x32">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+<link rel="canonical" href="https://angor-root.github.io/robotics/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Robotics Resources, Caleb Churata">
+<meta property="og:description" content="Courses, simulators, papers and open hardware for legged robotics.">
+<meta property="og:url" content="https://angor-root.github.io/robotics/">
+<meta property="og:image" content="https://angor-root.github.io/assets/media/og-home.jpg">
+</head>
+<body>
+<main>
+<p><a href="../">← Caleb Churata</a></p>
+<h1>Robotics learning resources</h1>
+<p class="sub">Courses, simulators, papers and open hardware I used to get into legged robotics. Free unless marked otherwise.</p>
+<p>Audio versions of the papers: <a href="https://notebooklm.google.com/notebook/0544f4b0-68aa-4b6f-b82d-c75165af60e7?utm_source=nlmm_share">public NotebookLM notebook</a> (Spanish).</p>
+
+<h2>Foundations</h2>
+<ul class="plain">
+<li><a href="https://modernrobotics.northwestern.edu/">Modern Robotics</a> <small>Kevin Lynch &amp; Frank Park · Northwestern · Book + course</small><br>The cleanest introduction to screw theory, kinematics and dynamics. Free PDF, free lecture videos, and the notation the rest of the field uses.</li>
+<li><a href="https://underactuated.mit.edu/">Underactuated Robotics</a> <small>Russ Tedrake · MIT 6.832 · Course</small><br>Why a walking robot is not a robot arm. Legged locomotion, trajectory optimization and LQR, taught from first principles with runnable notebooks.</li>
+<li><a href="https://lavalle.pl/planning/">Planning Algorithms</a> <small>Steven M. LaValle · free online · Book</small><br>The reference for configuration spaces, sampling-based planning and motion under differential constraints. Read chapters 4 to 6 and come back for the rest.</li>
+<li><a href="https://spinningup.openai.com/">Spinning Up in Deep RL</a> <small>OpenAI · Course</small><br>The fastest honest path from "what is a policy gradient" to a working PPO implementation, which is the algorithm behind most legged RL controllers today.</li>
+<li><a href="https://rail.eecs.berkeley.edu/deeprlcourse/">Deep Reinforcement Learning, CS 285</a> <small>Sergey Levine · UC Berkeley · Course</small><br>Go here after Spinning Up, when you need model-based RL, offline RL and imitation learning to be more than words.</li>
+<li><a href="https://rsl.ethz.ch/education-students/lectures.html">Robot Dynamics &amp; Legged Robots</a> <small>Robotic Systems Lab · ETH Zürich · Lectures</small><br>Floating-base dynamics, contact models and whole-body control, taught by the group that built ANYmal. Slides and exercises are public.</li>
+</ul>
+<h2>Simulators &amp; code</h2>
+<ul class="plain">
+<li><a href="https://mujoco.org/">MuJoCo</a> <small>Google DeepMind · open source · Simulator</small><br>Fast, accurate contact dynamics with a readable XML model format. MJX runs thousands of environments on a GPU for RL. Best first simulator.</li>
+<li><a href="https://isaac-sim.github.io/IsaacLab/">Isaac Lab</a> <small>NVIDIA · Simulator</small><br>Where most published legged RL policies are trained now: massively parallel envs, domain randomization and sim-to-real tooling out of the box. Needs an NVIDIA GPU.</li>
+<li><a href="https://github.com/leggedrobotics/legged_gym">legged_gym + rsl_rl</a> <small>Robotic Systems Lab · ETH Zürich · Code</small><br>The reference implementation of "train a quadruped to walk in minutes". Read it end to end, because the reward terms alone teach you more than a semester of theory.</li>
+<li><a href="https://github.com/stack-of-tasks/pinocchio">Pinocchio</a> <small>Stack of Tasks · LAAS-CNRS · Library</small><br>Rigid-body dynamics and its analytical derivatives, fast enough for control loops. What you reach for when you write your own whole-body controller.</li>
+<li><a href="https://drake.mit.edu/">Drake</a> <small>Toyota Research Institute · MIT · Toolbox</small><br>Model-based design done seriously: multibody dynamics plus convex optimization and contact-implicit trajectory optimization in one toolbox.</li>
+<li><a href="https://docs.ros.org/en/jazzy/">ROS 2 documentation</a> <small>Open Robotics · Framework</small><br>Not glamorous, unavoidable. Do the tutorials up to lifecycle nodes and tf2, because every robot you will touch in a lab speaks this.</li>
+</ul>
+<h2>Papers that changed legged robotics</h2>
+<ul class="plain">
+<li><a href="https://www.science.org/doi/10.1126/scirobotics.aau5872">Learning agile and dynamic motor skills for legged robots</a> <small>Hwangbo et al. · ETH Zürich · Science Robotics · 2019</small><br>The paper that made sim-to-real RL credible on real hardware: learn the actuator, and the policy transfers. Start your reading here.</li>
+<li><a href="https://www.science.org/doi/10.1126/scirobotics.abc5986">Learning quadrupedal locomotion over challenging terrain</a> <small>Lee et al. · ETH Zürich · Science Robotics · 2020</small><br>Teacher and student training with proprioception only. ANYmal crossing mud, snow and rubble without ever seeing the ground.</li>
+<li><a href="https://www.science.org/doi/10.1126/scirobotics.abk2822">Learning robust perceptive locomotion in the wild</a> <small>Miki et al. · ETH Zürich · Science Robotics · 2022</small><br>How to use vision without trusting it: an attention-based belief state that falls back on proprioception when the elevation map lies.</li>
+<li><a href="https://arxiv.org/abs/2109.11978">Learning to Walk in Minutes Using Massively Parallel Deep RL</a> <small>Rudin et al. · ETH Zürich · CoRL · 2021</small><br>The training recipe behind legged_gym, and the reason a student with one GPU can now reproduce this work.</li>
+<li><a href="https://ashish-kmr.github.io/rma-legged-robots/">RMA: Rapid Motor Adaptation</a> <small>Kumar, Fu, Pathak, Malik · CMU / Berkeley · RSS · 2021</small><br>Adapting to a new payload or a slippery floor within a fraction of a second, by estimating the environment from recent state history.</li>
+<li><a href="https://arxiv.org/abs/1008.5410">Capturability-based analysis of legged locomotion</a> <small>Koolen, de Boer, Rebula, Goswami, Pratt · Foundational · 2012</small><br>The capture-point theory behind push recovery, the classical, model-based counterweight to everything above. It is what my Obedience biped is built on.</li>
+</ul>
+<h2>Open hardware &amp; staying current</h2>
+<ul class="plain">
+<li><a href="https://open-dynamic-robot-initiative.github.io/">Open Dynamic Robot Initiative</a> <small>MPI-IS &amp; NYU · Solo 8 / Solo 12 · Open hardware</small><br>A torque-controlled quadruped you can actually build: full BOM, 3D-printable parts, open firmware. The realistic entry point to real legged hardware.</li>
+<li><a href="https://github.com/mjbots/moteus">moteus controllers</a> <small>mjbots · open source · Actuation</small><br>Small, cheap field-oriented-control drivers built for quasi-direct-drive legs. Read the docs even if you buy something else, because they explain what a leg actuator needs.</li>
+<li><a href="https://odriverobotics.com/">ODrive</a> <small>Commercial · open roots · Actuation</small><br>The other standard BLDC driver in hobby robotics, with a gentler learning curve and a large community of working builds.</li>
+<li><a href="https://www.weeklyrobotics.com/">Weekly Robotics</a> <small>Mat Sadowski · free · Newsletter</small><br>Five links a week, no hype, heavy on real engineering. The single cheapest way to stay current once your courses are done.</li>
+</ul>
+<footer>© 2026 Caleb Churata</footer>
+</main>
+</body>
+</html>
