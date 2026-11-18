@@ -41,9 +41,15 @@ const SO = /Android/i.test(ua) ? "Android"
   : /Windows/.test(ua) ? "Windows" : /Macintosh/.test(ua) ? "macOS" : /CrOS/.test(ua) ? "ChromeOS"
   : /Linux/.test(ua) ? (tactil ? "Android" : "Linux") : "";
 const EN = document.documentElement.lang == "en", esAndroid = SO == "Android";
+// Íconos Lucide: teléfono para móviles, monitor para computadoras.
+const ICONO = /Android|iOS/.test(SO)
+  ? '<rect width="14" height="20" x="5" y="2" rx="2"/><path d="M12 18h.01"/>'
+  : '<rect width="20" height="14" x="2" y="3" rx="2"/><path d="M8 21h8M12 17v4"/>';
 document.querySelectorAll("[data-so]").forEach(s => {
   if (!SO) return;
-  s.textContent = esAndroid ? (EN ? "For your Android" : "Para su Android") : (EN ? SO + " detected" : SO + " detectado");
+  const texto = esAndroid ? (EN ? "For your Android" : "Para su Android") : (EN ? SO + " detected · not available" : SO + " detectado · no disponible");
+  s.innerHTML = `<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${ICONO}</svg> ${texto}`;
+  s.classList.toggle("apagada", !esAndroid);
   s.hidden = false;
 });
 const noDisp = document.querySelector("[data-no-disponible]");
