@@ -34,7 +34,25 @@ async function enviar(f) {
 const dlg = document.getElementById("aviso"), MARCA = "himnarios-registrado";
 let yaRegistrado = false;
 try { yaRegistrado = !!localStorage.getItem(MARCA); } catch {}
+// Sistema del visitante: solo Android descarga. Tableta Android en «sitio de escritorio» dice Linux pero tiene pantalla táctil.
+const ua = navigator.userAgent, tactil = navigator.maxTouchPoints > 1;
+const SO = /Android/i.test(ua) ? "Android"
+  : /iPhone|iPad|iPod/.test(ua) || (/Macintosh/.test(ua) && tactil) ? "iOS"
+  : /Windows/.test(ua) ? "Windows" : /Macintosh/.test(ua) ? "macOS" : /CrOS/.test(ua) ? "ChromeOS"
+  : /Linux/.test(ua) ? (tactil ? "Android" : "Linux") : "";
+const EN = document.documentElement.lang == "en", esAndroid = SO == "Android";
+document.querySelectorAll("[data-so]").forEach(s => {
+  if (!SO) return;
+  s.textContent = esAndroid ? (EN ? "For your Android" : "Para su Android") : (EN ? SO + " detected" : SO + " detectado");
+  s.hidden = false;
+});
+const noDisp = document.querySelector("[data-no-disponible]");
+if (noDisp) noDisp.innerHTML = EN
+  ? `Not available on this platform${SO ? " (" + SO + ")" : ""}. Open this page on an Android phone or tablet to download.` + (SO == "iOS" ? ` <a href="#faq-ios">About iOS</a>` : "")
+  : `No está disponible en esta plataforma${SO ? " (" + SO + ")" : ""}. Abra esta página desde un teléfono o tableta Android para descargar.` + (SO == "iOS" ? ` <a href="#faq-ios">Sobre iOS</a>` : "");
+
 document.querySelectorAll("[data-apk]").forEach(a => a.addEventListener("click", e => {
+  if (!esAndroid) { e.preventDefault(); if (noDisp) noDisp.hidden = false; return; }
   if (yaRegistrado || !dlg || !dlg.showModal) return;
   e.preventDefault();
   dlg.showModal();
