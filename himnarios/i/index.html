@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Te compartieron algo de Himnarios</title>
+<meta name="robots" content="noindex">
+<link rel="stylesheet" href="../estilo.css"></head>
+<body>
+<!-- Enlace compartido desde la app (lista, himno o invitación a un grupo). Con la app instalada, Android abre la app directo
+     (App Links: /.well-known/assetlinks.json en la raíz del sitio) y esta página no se ve. Sin la app, explica qué es y cómo seguir. -->
+<header class="top"><a class="marca" href="../">Himnarios</a></header>
+<main id="contenido">
+<section class="ancho seccion">
+  <h1 id="titulo">Te compartieron algo de Himnarios</h1>
+  <p id="detalle"></p>
+  <p><a class="boton" id="abrir">Abrir en la app</a></p>
+  <p>¿No tienes la app? La descarga está en pausa unos días. Escríbenos a <a href="mailto:calebchurata@gmail.com">calebchurata@gmail.com</a> y te la hacemos llegar.</p>
+  <p><a href="../">Qué es Himnarios</a></p>
+</section>
+</main>
+<script>
+const q = new URLSearchParams(location.search), de = (q.get("de") || "").slice(0, 24) || "Alguien";
+const pon = (id, txt) => { document.getElementById(id).textContent = txt; };
+const himnos = (q.get("h") || "").split(",").filter(Boolean).length;
+if (q.get("g")) { pon("titulo", `${de} te invita a su grupo`); pon("detalle", `Código de invitación: ${q.get("g").slice(0, 12)}. En la app, Listas → «Tengo un código».`); }
+else if (q.get("l") !== null) { pon("titulo", `${de} te compartió una lista`); pon("detalle", `«${(q.get("l") || "").slice(0, 80)}» · ${himnos} ${himnos === 1 ? "himno" : "himnos"}`); }
+else if (himnos) { pon("titulo", `${de} te compartió un himno`); pon("detalle", (q.get("t") || "").slice(0, 120)); }
+document.getElementById("abrir").href = "himnarios://i" + location.search;
+</script>
+</body></html>
