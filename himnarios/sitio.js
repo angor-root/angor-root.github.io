@@ -1,6 +1,5 @@
 // Instalador (APK): Himnarios.apk al lado de sitio.js (en la raíz del sitio, para las páginas en español y en inglés).
-// En pausa: mientras se refuerza la seguridad no se publica el instalador aquí (sale el aviso [data-pronto]).
-const APK = "";
+const APK = new URL("Himnarios.apk", document.currentScript.src).href;
 
 document.documentElement.classList.add("js");
 
