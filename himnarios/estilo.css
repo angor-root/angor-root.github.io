@@ -36,7 +36,7 @@ ul{padding-left:22px}
 .portada{display:grid;gap:40px;align-items:center;padding-top:32px;padding-bottom:56px}
 .portada h1{font-size:clamp(36px,8vw,56px);margin-bottom:12px}
 .portada .lema{font-size:clamp(20px,4.6vw,26px);line-height:1.35;color:var(--muted);max-width:22em;margin:0}
-@media(min-width:800px){.portada{grid-template-columns:1fr auto;padding-top:56px;padding-bottom:80px}}
+@media(min-width:800px){.portada{padding-top:56px;padding-bottom:40px}}
 
 /* marco de teléfono: ilustración debajo, captura real encima si existe */
 .tel{position:relative;width:min(240px,64vw);aspect-ratio:360/780;border:9px solid var(--bezel);border-radius:38px;overflow:hidden;background:#fff;margin:0 auto;box-shadow:0 1px 2px rgba(0,0,0,.06),0 12px 32px rgba(0,0,0,.08)}
@@ -130,3 +130,23 @@ dialog .check{font-size:14px;color:var(--muted)}
 .chico{margin-top:16px;padding-top:12px;border-top:1px solid var(--line);font-size:13px;color:var(--muted)}
 .chico p{margin:0 0 8px}
 .chico .icono-bandera{vertical-align:-2px}
+
+/* marca: pentagrama, franja de foto con velo azul y galería */
+.ceja{display:flex;align-items:center;gap:12px;margin:0 0 14px;color:var(--accent);font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase}
+.pentagrama{width:44px;height:17px;background:repeating-linear-gradient(to bottom,currentColor 0 1.5px,transparent 1.5px 4px);opacity:.55}
+.banda{position:relative;margin:0 auto 8px;padding-top:0;padding-bottom:0}
+.banda img{display:block;width:100%;height:auto;aspect-ratio:5/2;object-fit:cover;object-position:30% center;border-radius:14px}
+.banda:after{content:"";position:absolute;inset:0 20px;border-radius:14px;pointer-events:none;background:linear-gradient(100deg,rgba(14,52,120,.42) 0%,rgba(14,52,120,.12) 45%,rgba(14,52,120,0) 70%)}
+@media(max-width:640px){.banda img{aspect-ratio:4/3}}
+.galeria{display:grid;gap:16px;padding-top:40px;padding-bottom:48px}
+.galeria figure{margin:0}
+.galeria img{display:block;width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;border-radius:12px}
+.galeria figcaption{margin-top:8px;color:var(--muted);font-size:15px}
+@media(min-width:720px){.galeria{grid-template-columns:1fr 1fr;gap:20px}}
+.proximo{list-style:none;padding:0;margin:24px 0 8px;display:grid;gap:22px 36px}
+.proximo li{margin:0;padding-top:14px;border-top:1px solid var(--line)}
+.proximo h3{font-size:17px;margin-bottom:4px}
+.proximo p{margin:0;color:var(--muted);font-size:16px}
+@media(min-width:720px){.proximo{grid-template-columns:1fr 1fr}}
+#v21 .nota{max-width:46em;margin-top:28px}
+#v21 .nota p{color:var(--muted)}
