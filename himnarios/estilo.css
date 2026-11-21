@@ -36,7 +36,7 @@ ul{padding-left:22px}
 .portada{display:grid;gap:40px;align-items:center;padding-top:32px;padding-bottom:56px}
 .portada h1{font-size:clamp(36px,8vw,56px);margin-bottom:12px}
 .portada .lema{font-size:clamp(20px,4.6vw,26px);line-height:1.35;color:var(--muted);max-width:22em;margin:0}
-@media(min-width:800px){.portada{padding-top:56px;padding-bottom:40px}}
+@media(min-width:800px){.portada{padding-top:24px;padding-bottom:40px}}
 
 /* marco de teléfono: ilustración debajo, captura real encima si existe */
 .tel{position:relative;width:min(240px,64vw);aspect-ratio:360/780;border:9px solid var(--bezel);border-radius:38px;overflow:hidden;background:#fff;margin:0 auto;box-shadow:0 1px 2px rgba(0,0,0,.06),0 12px 32px rgba(0,0,0,.08)}
@@ -131,17 +131,24 @@ dialog .check{font-size:14px;color:var(--muted)}
 .chico p{margin:0 0 8px}
 .chico .icono-bandera{vertical-align:-2px}
 
-/* marca: pentagrama, franja de foto con velo azul y galería */
-.ceja{display:flex;align-items:center;gap:12px;margin:0 0 14px;color:var(--accent);font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase}
-.pentagrama{width:44px;height:17px;background:repeating-linear-gradient(to bottom,currentColor 0 1.5px,transparent 1.5px 4px);opacity:.55}
-.banda{position:relative;margin:0 auto 8px;padding-top:0;padding-bottom:0}
-.banda img{display:block;width:100%;height:auto;aspect-ratio:5/2;object-fit:cover;object-position:30% center;border-radius:14px}
-.banda:after{content:"";position:absolute;inset:0 20px;border-radius:14px;pointer-events:none;background:linear-gradient(100deg,rgba(14,52,120,.42) 0%,rgba(14,52,120,.12) 45%,rgba(14,52,120,0) 70%)}
-@media(max-width:640px){.banda img{aspect-ratio:4/3}}
+/* marca: portada con foto, velo azul y contenido encima; galería con texto sobre la foto */
+.heroe{position:relative;border-radius:18px;overflow:hidden;background:#0e3478 var(--foto) 62% center/cover no-repeat;color:#fff;min-height:min(560px,78vh);display:flex;align-items:flex-end}
+.heroe:before{content:"";position:absolute;inset:0;background:linear-gradient(100deg,rgba(8,30,74,.94) 0%,rgba(10,40,96,.78) 38%,rgba(14,52,120,.25) 72%,rgba(14,52,120,.08) 100%)}
+.heroe-texto{position:relative;padding:40px 36px;max-width:34em}
+.heroe h1{color:#fff}
+.heroe .lema{color:#d6e3fa}
+.heroe .acciones a:not(.boton){color:#fff}
+.heroe .boton{background:#fff;color:#0e3478}
+.heroe .etiqueta{border-color:rgba(255,255,255,.5);color:#fff}
+.ceja{display:flex;align-items:center;gap:12px;margin:0 0 16px;color:#a9c4f5;font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase}
+.pentagrama{width:46px;height:17px;background:repeating-linear-gradient(to bottom,currentColor 0 1.5px,transparent 1.5px 4px);opacity:.8}
+@media(max-width:640px){.heroe{min-height:0;background-position:70% center}.heroe:before{background:linear-gradient(180deg,rgba(8,30,74,.55) 0%,rgba(8,30,74,.92) 55%)}.heroe-texto{padding:120px 22px 28px}}
 .galeria{display:grid;gap:16px;padding-top:40px;padding-bottom:48px}
-.galeria figure{margin:0}
-.galeria img{display:block;width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;border-radius:12px}
-.galeria figcaption{margin-top:8px;color:var(--muted);font-size:15px}
+.galeria figure{position:relative;margin:0;border-radius:14px;overflow:hidden}
+.galeria img{display:block;width:100%;height:auto;aspect-ratio:4/3;object-fit:cover}
+.galeria figcaption{position:absolute;left:0;right:0;bottom:0;padding:48px 20px 18px;color:#fff;background:linear-gradient(180deg,rgba(8,30,74,0),rgba(8,30,74,.88))}
+.galeria figcaption strong{display:block;font-size:19px;margin-bottom:2px}
+.galeria figcaption span{display:block;font-size:15px;color:#d6e3fa;line-height:1.45}
 @media(min-width:720px){.galeria{grid-template-columns:1fr 1fr;gap:20px}}
 .proximo{list-style:none;padding:0;margin:24px 0 8px;display:grid;gap:22px 36px}
 .proximo li{margin:0;padding-top:14px;border-top:1px solid var(--line)}
@@ -150,3 +157,4 @@ dialog .check{font-size:14px;color:var(--muted)}
 @media(min-width:720px){.proximo{grid-template-columns:1fr 1fr}}
 #v21 .nota{max-width:46em;margin-top:28px}
 #v21 .nota p{color:var(--muted)}
+.sellos{margin:22px 0 0;font-size:14px;color:#a9c4f5;letter-spacing:.02em}
