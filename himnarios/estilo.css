@@ -155,6 +155,6 @@ dialog .check{font-size:14px;color:var(--muted)}
 .proximo h3{font-size:17px;margin-bottom:4px}
 .proximo p{margin:0;color:var(--muted);font-size:16px}
 @media(min-width:720px){.proximo{grid-template-columns:1fr 1fr}}
-#v21 .nota{max-width:46em;margin-top:28px}
-#v21 .nota p{color:var(--muted)}
+#v21 .nota,#viene .nota{max-width:46em;margin-top:28px}
+#v21 .nota p,#viene .nota p{color:var(--muted)}
 .sellos{margin:22px 0 0;font-size:14px;color:#a9c4f5;letter-spacing:.02em}
